@@ -22,81 +22,97 @@
     <!-- Link para requisição da Font Awesome -->
     <script src="https://kit.fontawesome.com/644cf35058.js" crossorigin="anonymous"></script>
 
+    <!-- Link para requisição do jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <title>Register Yourself</title>
 </head>
 <body>
     <section class="card-signUp">
         <div class="wrapper">
             <div class="signUp">
+                <div class="back-button">
+                    <i class="fa-solid fa-arrow-left-long buttonBack" href="/index.html"></i>
+                </div>
                 <div class="logo">
-                    <a class="logo-link" href="/"></a>
+                    <a class="logo-link" href="../index.html"></a>
                 </div>
     
                 <h1 class="signUp-title"><strong>Cadastre-se</strong></h1>
     
-                <form class="form">
+                <form class="form" data-form>
                     <div class="form-group">
                         <label class="form-label hide" for="inputNameUp">Nome Completo</label>
-                        <input type="text" name="name" class="form-text" id="inputNameUp" placeholder="Nome Completo"/>
+                        <input type="text" name="name" class="form-text" id="inputNameUp" placeholder="Nome Completo" required data-input/>
                         <i class="form-icon fas fa-user"></i>
-                        <span class="form-message-error">Campo Obrigatório</span>
+                        <span class="form-message-error"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label hide" for="inputCPFUp">CPF</label>
-                        <input type="text" name="cpf" class="form-text" id="inputCPFUp" placeholder="000.000.000-00"/>
+                        <input type="text" name="cpf" class="form-text" id="inputCPFUp" placeholder="000.000.000-00"  required data-input/>
                         <i class="form-icon fa-solid fa-pen-nib"></i>
+                        <span class="form-message-error"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label hide" for="inputTelefoneUp">Telefone</label>
-                        <input type="text" name="telefone" class="form-text" id="inputTelefoneUp" placeholder="() ____-____"/>
+                        <input type="text" name="telefone" class="form-text" id="inputTelefoneUp" placeholder="() ____-____"  required data-input/>
                         <i class="form-icon fa-solid fa-phone"></i>
+                        <span class="form-message-error"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label hide" for="inputEmailUp">E-mail</label>
-                        <input type="email" name="email" class="form-text" id="inputEmailUp" placeholder="yourmail@web.com"/>
+                        <input type="email" name="email" class="form-text" id="inputEmailUp" placeholder="yourmail@web.com"  required data-input/>
                         <i class="form-icon fa-solid fa-envelope"></i>
+                        <span class="form-message-error"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label hide">Endereço</label>
-                        <input type="text" name="endereco" class="form-text" id="inputEnderecoUp" placeholder="Rua Itorrent - 00E"/>
+                        <input type="text" name="endereco" class="form-text" id="inputEnderecoUp" placeholder="Rua Itorrent - 00E"  required data-input/>
                         <i class="form-icon fa-solid fa-location-dot"></i>
+                        <span class="form-message-error"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label hide" for="inputSenhaUp">Senha</label>
-                        <input type="password" name="senha" class="form-text" id="inputSenhaUp" placeholder="Senha"/>
+                        <input type="password" name="senha" class="form-text" id="inputSenhaUp" placeholder="Senha"  required data-input/>
                         <i class="form-icon fas fa-lock"></i>
+                        <i class="form-icon fas fa-eye"></i>
+                        <span class="form-message-error"></span>
 
-                        <div class="progress-requirements-bar"></div>
+                        <div class="progress-requirements-bar" data-requirement-progress></div>
                         
                         <div class="requirements">
                             <div class="requirement-description">A senha deverá ter:</div>
                             <ul class="requirements-list">
-                                <li class="requirements-item">
+                                <li class="requirements-item" data-requirement-item>
                                     <i class="fas fa-circle-xmark"></i>
                                     Pelo menos uma letra maiúscula e uma letra minúscula.</li>
-                                <li class="requirements-item">
+                                <li class="requirements-item" data-requirement-item>
                                     <i class="fas fa-circle-xmark"></i>
                                     Pelo menos um número.</li>
-                                <li class="requirements-item">
+                                <li class="requirements-item" data-requirement-item>
                                     <i class="fas fa-circle-xmark"></i>
                                     Pelo menos um caractere especial.</li>
-                                <li class="requirements-item">
+                                <li class="requirements-item" data-requirement-item>
                                     <i class="fas fa-circle-xmark"></i>
                                     Pelo menos 8 caracteres.</li>
                             </ul>
                         </div>
                     </div>
                     <div class="form-checkbox-group">
-                        <input type="checkbox" name="terms" class="form-checkbox" id="inputTerms"/>
+                        <input type="checkbox" name="terms" class="form-checkbox" id="inputTerms" required data-input/>
                         <label class="checkbox-label hide" for="inputTerms">Concordo com os <a class="form-link" href="#">termos</a> e 
                             <a class="form-link" href="#">políticas de privacidade</a>.</label>
                     </div>
                     <div class="form-group form-group-center">
-                        <button class="form-button-signUp" type="submit">Pronto</button>
+                        <button class="form-button-signUp" type="submit" id="button-cadastro">Sign-in</button>
                     </div>
                 </form>
+                <div id="fakeLoading" class="loading-overlay">
+                    <i class="fas fa-spinner fa-spin loading-icon"></i>
+                </div>
             </div>
         </div>
     </section>
+    <script src="./Assets/JS/formValidation.js"></script>
 </body>
 </html>
