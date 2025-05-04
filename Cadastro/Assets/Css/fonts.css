@@ -1,0 +1,77 @@
+/* 
+  A integridade deste código é inegociável.
+
+  A Itorrent Web detém a propriedade intelectual exclusiva.
+
+  Qualquer reprodução, distribuição, ou modificação não
+  autorizada será tratada com a máxima severidade legal.
+
+  Esteja ciente de que violações não apenas infringem nossos direitos,
+  mas também acarretam consequências legais e financeiras substanciais.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --robotoRegular: "Roboto", sans-serif;
+    --montserratRegular: "Montserrat", sans-serif;
+    --jetbrainsMono: "JetBrains Mono", monospace;
+    --fontWeightRegular: 400;
+    --fontWeightMedium: 600;
+    --fontWeightBlack: 900;
+    --placeholder: #73767B;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--robotoRegular);
+    font-weight: var(--fontWeightRegular);
+}
+
+.signUp-title {
+    font-family: var(--montserratRegular);
+    font-weight: var(--fontWeightBold);
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.form-text {
+    font-family: var(--robotoRegular);
+    font-size: 1.5rem;
+}
+
+.form-text::placeholder {
+    font-weight: var(--fontWeightBold);
+    color: var(--placeholder);
+}
+
+.requirement-description,
+.requirements-item {
+    font-family: var(--montserratRegular);
+    font-weight: var(--fontWeightMedium);
+    margin-bottom: .5rem;
+}
+
+.checkbox-label {
+    font-family: var(--montserratRegular);
+    font-weight: var(--fontWeightMedium);
+    font-size: 1.4rem;
+}
+
+.form-button-signUp {
+    font-family: var(--robotoRegular);
+    font-size: 1.8rem;
+    font-weight: var(--fontWeightMedium);
+    text-transform: uppercase;
+}
+
+.form-message-error {
+    color: #D95150;
+    font-size: 1.2rem;
+    margin-top: .4rem;
+    left: .5rem;
+    font-weight: var(500);
+}
