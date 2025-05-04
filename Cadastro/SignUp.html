@@ -32,53 +32,56 @@
         <div class="wrapper">
             <div class="signUp">
                 <div class="back-button">
-                    <i class="fa-solid fa-arrow-left-long buttonBack" href="/index.html"></i>
+                    <a href="../index.html" class="tooltip">
+                        <i class="fa-solid fa-arrow-left-long buttonBack"></i>
+                        <span class="tooltip-text">Voltar para a página inicial</span>
+                    </a>
                 </div>
                 <div class="logo">
-                    <a class="logo-link" href="../index.html"></a>
+                    <a class="logo-link" href="../documentoEmpresa.html"></a>
                 </div>
     
-                <h1 class="signUp-title"><strong>Cadastre-se</strong></h1>
+                <h1 class="signUp-title"><strong>nos conte sobre você</strong></h1>
     
                 <form class="form" data-form>
                     <div class="form-group">
                         <label class="form-label hide" for="inputNameUp">Nome Completo</label>
                         <input type="text" name="name" class="form-text" id="inputNameUp" placeholder="Nome Completo" required data-input/>
                         <i class="form-icon fas fa-user"></i>
-                        <span class="form-message-error"></span>
+                        <span class="form-message-error" data-error></span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label hide" for="inputCPFUp">CPF</label>
-                        <input type="text" name="cpf" class="form-text" id="inputCPFUp" placeholder="000.000.000-00"  required data-input/>
+                        <label class="form-label hide" for="cpf">CPF</label>
+                        <input type="text" name="cpf" class="form-text" id="cpf" placeholder="000.000.000-00"  required data-input/>
                         <i class="form-icon fa-solid fa-pen-nib"></i>
-                        <span class="form-message-error"></span>
+                        <span class="form-message-error" data-error></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label hide" for="inputTelefoneUp">Telefone</label>
                         <input type="text" name="telefone" class="form-text" id="inputTelefoneUp" placeholder="() ____-____"  required data-input/>
                         <i class="form-icon fa-solid fa-phone"></i>
-                        <span class="form-message-error"></span>
+                        <span class="form-message-error" data-error></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label hide" for="inputEmailUp">E-mail</label>
                         <input type="email" name="email" class="form-text" id="inputEmailUp" placeholder="yourmail@web.com"  required data-input/>
                         <i class="form-icon fa-solid fa-envelope"></i>
-                        <span class="form-message-error"></span>
+                        <span class="form-message-error" data-error></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label hide">Endereço</label>
                         <input type="text" name="endereco" class="form-text" id="inputEnderecoUp" placeholder="Rua Itorrent - 00E"  required data-input/>
                         <i class="form-icon fa-solid fa-location-dot"></i>
-                        <span class="form-message-error"></span>
+                        <span class="form-message-error" data-error></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label hide" for="inputSenhaUp">Senha</label>
                         <input type="password" name="senha" class="form-text" id="inputSenhaUp" placeholder="Senha"  required data-input/>
                         <i class="form-icon fas fa-lock"></i>
-                        <i class="form-icon fas fa-eye"></i>
-                        <span class="form-message-error"></span>
+                        <i class="form-icon fas fa-eye" data-toggle-password></i>
 
                         <div class="progress-requirements-bar" data-requirement-progress></div>
+                        <span class="form-message-error" data-error></span>
                         
                         <div class="requirements">
                             <div class="requirement-description">A senha deverá ter:</div>
@@ -98,6 +101,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="form-checkbox-group">
                         <input type="checkbox" name="terms" class="form-checkbox" id="inputTerms" required data-input/>
                         <label class="checkbox-label hide" for="inputTerms">Concordo com os <a class="form-link" href="#">termos</a> e 
@@ -107,6 +111,16 @@
                         <button class="form-button-signUp" type="submit" id="button-cadastro">Sign-in</button>
                     </div>
                 </form>
+
+                <div class="social-login">
+                    <p class="texto-opcional-login">Ou entre com</p>
+                    <div class="social-icons">
+                        <button class="social-btn google"><i class="fab fa-google"></i></button>
+                        <button class="social-btn github"><i class="fab fa-github"></i></button>
+                        <button class="social-btn facebook"><i class="fab fa-facebook-f"></i></button>
+                    </div>
+                </div>
+
                 <div id="fakeLoading" class="loading-overlay">
                     <i class="fas fa-spinner fa-spin loading-icon"></i>
                 </div>

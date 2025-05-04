@@ -48,9 +48,19 @@ body {
     font-weight: var(--fontWeightBlack);
 }
 
+.tooltip-text {
+    font-family: var(--jetbrainsMono);
+    font-size: 1.6rem;
+    font-weight: var(--fontWeightMedium);
+}
+
 .form-text::placeholder {
     font-weight: var(--fontWeightBold);
     color: var(--placeholder);
+}
+
+.requirements {
+    font-size: 2rem;
 }
 
 .requirement-description,
@@ -58,6 +68,7 @@ body {
     font-family: var(--montserratRegular);
     font-weight: var(--fontWeightMedium);
     margin-bottom: .5rem;
+    font-size: 1.4rem;
 }
 
 .checkbox-label {
@@ -67,7 +78,7 @@ body {
 }
 
 .form-link {
-    color: blue;
+    color: #1e90ff;
 }
 
 .form-button-signUp {
@@ -83,4 +94,10 @@ body {
     margin-top: .4rem;
     left: .5rem;
     font-weight: var(500);
+}
+
+.texto-opcional-login {
+    font-size: 2rem;
+    font-family: var(--montserratRegular);
+    font-weight: var(--fontWeightMedium);
 }

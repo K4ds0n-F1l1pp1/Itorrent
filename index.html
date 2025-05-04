@@ -1,11 +1,59 @@
+<!-- 
+  A integridade deste código é inegociável.
+
+  A Itorrent Web detém a propriedade intelectual exclusiva.
+
+  Qualquer reprodução, distribuição, ou modificação não
+  autorizada será tratada com a máxima severidade legal.
+
+  Esteja ciente de que violações não apenas infringem nossos direitos,
+  mas também acarretam consequências legais e financeiras substanciais.
+-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./Main/Assets/CSS/Styles.css" rel="stylesheet">
+
+    <!-- Link para requisição da Font Awesome -->
+    <script src="https://kit.fontawesome.com/644cf35058.js" crossorigin="anonymous"></script>
+
     <title>ItorrentWeb</title>
 </head>
 <body>
-    <a href="Cadastro/SignUp.html">Ir para próxima</a>
+    <div class="container">
+        <div class="left">
+        <div class="logo">
+            <a class="logo-link" href="../documentoEmpresa.html"></a>
+        </div>
+          <h1>Sign in to</h1>
+          <p>seja bem vindo ao ItorrentWeb</p>
+          <p>Não tem conta? <a href="./Cadastro/SignUp.html">Cadastre-se aqui!</a></p>
+        </div>
+        <div class="right">
+          <form data-form>
+            <div class="form-group">
+              <input type="email" placeholder="Digite seu e-mail" id="email" required data-input />
+              <i class="form-icon fa-solid fa-envelope"></i>
+              <span class="form-message-error" data-error></span>
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Senha" id="senha" required data-input />
+              <i class="form-icon fa-solid fa-eye password-toggle" id="toggleSenha"></i>
+              <span class="form-message-error" data-error></span>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+          </form>
+          <div class="social-login">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-google"></i>
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="./Main/Assets/JS/index.js"></script>
 </body>
 </html>

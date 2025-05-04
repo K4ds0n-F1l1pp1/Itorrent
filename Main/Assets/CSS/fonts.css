@@ -1,0 +1,27 @@
+/* 
+  A integridade deste código é inegociável.
+
+  A Itorrent Web detém a propriedade intelectual exclusiva.
+
+  Qualquer reprodução, distribuição, ou modificação não
+  autorizada será tratada com a máxima severidade legal.
+
+  Esteja ciente de que violações não apenas infringem nossos direitos,
+  mas também acarretam consequências legais e financeiras substanciais.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --robotoRegular: "Roboto", sans-serif;
+    --montserratRegular: "Montserrat", sans-serif;
+    --jetbrainsMono: "JetBrains Mono", monospace;
+    --fontWeightRegular: 400;
+    --fontWeightMedium: 600;
+    --fontWeightBlack: 900;
+    --placeholder: #73767B;
+}
+
+html {
+    font-size: 62.5%;
+}
