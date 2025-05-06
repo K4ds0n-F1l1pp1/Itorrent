@@ -8,10 +8,10 @@
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(120deg, #04364A, #176B87);
     color: #333;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
   }
 
   .container {
@@ -22,6 +22,7 @@
     overflow: hidden;
     max-width: 960px;
     width: 100%;
+    margin: 5rem auto;
   }
 
   .logo-link {
@@ -32,89 +33,181 @@
     width: 8.7rem;
 }
 
-  .left {
-    flex: 1;
-    background: #f9f9f9;
-    padding: 4rem 2rem;
-    display: flex;
+.left {
+  flex: 1;
+  background: #c9c1c1;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.left p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.left a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.right {
+  flex: 1;
+  padding: 4rem 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem 2.5rem 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  color: #999;
+  cursor: pointer;
+}
+
+.form-message-error {
+  font-size: 0.9rem;
+  color: red;
+  margin-top: 0.3rem;
+}
+
+.login-button {
+  width: 100%;
+  padding: 1rem;
+  background: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-login i {
+  font-size: 1.5rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.password-toggle {
+  right: 1rem;
+}
+
+.cards-section {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-radius: 2rem;
+}
+
+.card {
+  width: 280px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 18%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #04364A;
+  text-align: center;
+}
+
+.card p {
+  font-size: 0.95rem;
+  text-align: center;
+  color: #555;
+}
+
+.footer {
+  margin-top: 3rem;
+  width: 100%;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-content i {
+  color: #1abc9c;
+}
+
+.footer-content a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
-
-  .left h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .left p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .left a {
-    color: #3f51b5;
-    text-decoration: none;
-  }
-
-  .right {
-    flex: 1;
-    padding: 4rem 2rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.5rem;
-    position: relative;
-  }
-
-  .form-group input {
-    width: 100%;
-    padding: 0.8rem 2.5rem 0.8rem 1rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-  }
-
-  .form-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 1rem;
-    color: #999;
-    cursor: pointer;
-  }
-
-  .form-message-error {
-    font-size: 0.9rem;
-    color: red;
-    margin-top: 0.3rem;
-  }
-
-  .login-button {
-    width: 100%;
-    padding: 1rem;
-    background: #3f51b5;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .social-login {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .social-login i {
-    font-size: 1.5rem;
-    color: #444;
-    cursor: pointer;
-  }
-
-  .password-toggle {
-    right: 1rem;
-  }
+}

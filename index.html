@@ -20,40 +20,75 @@
     <!-- Link para requisição da Font Awesome -->
     <script src="https://kit.fontawesome.com/644cf35058.js" crossorigin="anonymous"></script>
 
+    <!-- Link para requisição do jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>ItorrentWeb</title>
 </head>
 <body>
-    <div class="container">
-        <div class="left">
-        <div class="logo">
-            <a class="logo-link" href="../documentoEmpresa.html"></a>
-        </div>
-          <h1>Sign in to</h1>
-          <p>seja bem vindo ao ItorrentWeb</p>
-          <p>Não tem conta? <a href="./Cadastro/SignUp.html">Cadastre-se aqui!</a></p>
-        </div>
-        <div class="right">
-          <form data-form>
-            <div class="form-group">
-              <input type="email" placeholder="Digite seu e-mail" id="email" required data-input />
-              <i class="form-icon fa-solid fa-envelope"></i>
-              <span class="form-message-error" data-error></span>
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Senha" id="senha" required data-input />
-              <i class="form-icon fa-solid fa-eye password-toggle" id="toggleSenha"></i>
-              <span class="form-message-error" data-error></span>
-            </div>
-            <button type="submit" class="login-button">Login</button>
-          </form>
-          <div class="social-login">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-github"></i>
-            <i class="fab fa-google"></i>
-          </div>
-        </div>
+  <div class="container">
+    <div class="left">
+      <div class="logo">
+        <a class="logo-link" href="../documentoEmpresa.html"></a>
       </div>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="./Main/Assets/JS/index.js"></script>
+      <h1>Sign in to</h1>
+      <p>seja bem vindo ao ItorrentWeb</p>
+      <p>Não tem conta? <a href="./Cadastro/SignUp.html">Cadastre-se aqui!</a></p>
+    </div>
+
+    <div class="right">
+      <form data-form>
+        <div class="form-group">
+          <input type="email" placeholder="Digite seu e-mail" id="email" required data-input />
+          <i class="form-icon fa-solid fa-envelope"></i>
+          <span class="form-message-error" data-error></span>
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Senha" id="senha" required data-input />
+          <i class="form-icon fa-solid fa-eye password-toggle" id="toggleSenha"></i>
+          <span class="form-message-error" data-error></span>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+      </form>
+      <div class="social-login">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-github"></i>
+        <i class="fab fa-google"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-between">
+
+  </div>
+
+  <section class="cards-section">
+    <div class="card">
+      <img src="./Main/Assets/Images/logoT.png" alt="Logo">
+      <h3>Quem somos</h3>
+      <p>Somos a ItorrentWeb, uma plataforma voltada à segurança e distribuição eficiente de arquivos em rede.</p>
+    </div>
+    <div class="card">
+      <img src="./Main/Assets/Images/target.png" alt="Missão">
+      <h3>Nossa missão</h3>
+      <p>Facilitar a transferência de dados entre usuários, com foco em velocidade, estabilidade e privacidade.</p>
+    </div>
+    <div class="card">
+      <img src="./Main/Assets/Images/diamond.png" alt="Valores">
+      <h3>Nossos valores</h3>
+      <p>Prezamos por liberdade digital, inovação contínua e o acesso democrático à informação.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p><i class="fa-solid fa-credit-card"></i> Saques via PIX em até 24h</p>
+      <p><i class="fa-solid fa-phone"></i> Contato: (49) 99999-9999</p>
+      <p><i class="fa-solid fa-headset"></i> Suporte: <a href="mailto:suporte@itorrentweb.com">suporte@itorrentweb.com</a></p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./Main/Assets/JS/index.js"></script>
 </body>
 </html>
