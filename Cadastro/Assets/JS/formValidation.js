@@ -31,6 +31,11 @@ $(document).ready( function() {
         }, 150);
     });
 
+    //---- Botão Switch ----\\
+    document.getElementById('button-switch').addEventListener('click', function () {
+        this.classList.toggle('active');
+    });
+
     //---- CONTENT ----\\
 
     //-- Validador de CPF --\\   
