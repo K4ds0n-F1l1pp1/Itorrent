@@ -1,0 +1,145 @@
+<!-- 
+  A integridade deste código é inegociável.
+
+  A Itorrent Web detém a propriedade intelectual exclusiva.
+
+  Qualquer reprodução, distribuição, ou modificação não
+  autorizada será tratada com a máxima severidade legal.
+
+  Esteja ciente de que violações não apenas infringem nossos direitos,
+  mas também acarretam consequências legais e financeiras substanciais.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Técnico</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./Assets/Css/StylesTecnicos.css">
+  <link rel="stylesheet" href="./Assets/Css/fonts.css">
+</head>
+
+<body>
+    <div class="form-card">
+      <a href="../index.html" class="back-btn" title="Voltar">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+      
+      <div class="form-header">
+        <div class="logo"></div>
+        <h1 class="form-title">Cadastro de Técnico</h1>
+        <p class="form-subtitle">Preencha todos os campos obrigatórios</p>
+      </div>
+      
+      <form class="form-grid">
+        <div class="form-group full-width">
+          <label class="form-label">Nome completo</label>
+          <i class="form-icon fas fa-user"></i>
+          <input type="text" name="nome" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">CPF</label>
+          <i class="form-icon fas fa-id-card"></i>
+          <input type="text" name="cpf" class="form-input" pattern="\d{11}" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Data de nascimento</label>
+          <i class="form-icon fas fa-calendar-day"></i>
+          <input type="date" name="data_nascimento" class="form-input" required>
+        </div>
+        
+        <!-- Contato -->
+        <div class="form-group">
+          <label class="form-label">Telefone</label>
+          <i class="form-icon fas fa-phone"></i>
+          <input type="tel" name="telefone" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">E-mail</label>
+          <i class="form-icon fas fa-envelope"></i>
+          <input type="email" name="email" class="form-input" required>
+        </div>
+        
+        <!-- Endereço -->
+        <div class="form-group">
+          <label class="form-label">CEP</label>
+          <i class="form-icon fas fa-map-pin"></i>
+          <input type="text" name="cep" class="form-input" pattern="\d{8}" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Estado</label>
+          <i class="form-icon fas fa-map"></i>
+          <select name="estado" class="form-input" required>
+            <option value="">Selecione...</option>
+                <option>Santa Catarina</option>
+                <option>Rio Grande do Sul</option>
+                <option>Paraná</option>
+                <option>São Paulo</option>
+                <option>Rio de Janeiro</option>
+          </select>
+        </div>
+        
+        <div class="form-group full-width">
+          <label class="form-label">Rua</label>
+          <i class="form-icon fas fa-road"></i>
+          <input type="text" name="rua" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Número</label>
+          <i class="form-icon fas fa-hashtag"></i>
+          <input type="text" name="numero" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Complemento</label>
+          <i class="form-icon fas fa-layer-group"></i>
+          <input type="text" name="complemento" class="form-input">
+        </div>
+        
+        <!-- Documentos -->
+        <div class="form-group full-width">
+          <label class="form-label">Foto</label>
+          <div class="file-input-wrapper">
+            <i class="form-icon fas fa-image"></i>
+            <label class="file-input-label">
+              <span class="file-name">Nenhum arquivo selecionado</span>
+              <input type="file" name="foto" class="file-input" accept="image/*" required>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group full-width">
+          <label class="form-label">Currículo (PDF)</label>
+          <div class="file-input-wrapper">
+            <i class="form-icon fas fa-file-pdf"></i>
+            <label class="file-input-label">
+              <span class="file-name">Nenhum arquivo selecionado</span>
+              <input type="file" name="curriculo" class="file-input" accept=".pdf" required>
+            </label>
+          </div>
+        </div>
+        
+        <!-- Botão de Submit -->
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-user-plus"></i> Me Cadastrar
+        </button>
+      </form>
+    </div>
+  
+    <script>
+      document.querySelectorAll('.file-input').forEach(input => {
+        input.addEventListener('change', function() {
+          const fileName = this.files[0] ? this.files[0].name : 'Nenhum arquivo selecionado';
+          this.closest('.file-input-wrapper').querySelector('.file-name').textContent = fileName;
+        });
+      });
+    </script>
+  </body>
+  </html>

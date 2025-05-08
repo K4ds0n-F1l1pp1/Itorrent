@@ -101,3 +101,10 @@ body {
     font-family: var(--montserratRegular);
     font-weight: var(--fontWeightMedium);
 }
+
+.form-title {
+    font-size: 2.8rem;
+    font-weight: var(--fontWeightMedium);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}

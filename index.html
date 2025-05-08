@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./Main/Assets/CSS/Styles.css" rel="stylesheet">
-    <link rel="icon" href="">
+    <link rel="icon" href="./Main/Assets/Images/Itorrent.png">
 
     <!-- Link para requisição da Font Awesome -->
     <script src="https://kit.fontawesome.com/644cf35058.js" crossorigin="anonymous"></script>
@@ -27,6 +27,19 @@
     <title>ItorrentWeb</title>
 </head>
 <body>
+
+  <nav class="nav-container">
+    <a href="#" class="nav-logo">Itorrent</a>
+    <div class="nav-links">
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a onclick="window.location.href='./Cadastro/SignUpTecnicos.html'" class="nav-link">
+          Trabalhe conosco!
+        </a>
+        <a href="#" class="nav-link get-app-btn">Get App</a>
+
+    </div>
+  </nav>
+
   <div class="container">
     <div class="left">
       <div class="logo">
@@ -67,24 +80,61 @@
     <div class="card">
       <img src="./Main/Assets/Images/logoT.png" alt="Logo">
       <h3>Quem somos</h3>
-      <p>Somos a ItorrentWeb, uma plataforma voltada à segurança e distribuição eficiente de arquivos em rede.</p>
+      <p>Somos a ItorrentWeb, uma plataforma que visa facilitar a comunicação entre técnicos e clientes, oferecendo uma conexão rápida e uma manutenção confiavél.</p>
     </div>
     <div class="card">
       <img src="./Main/Assets/Images/target.png" alt="Missão">
       <h3>Nossa missão</h3>
-      <p>Facilitar a transferência de dados entre usuários, com foco em velocidade, estabilidade e privacidade.</p>
+      <p>Na ItorrentWeb, nossa missão é simplificar a comunicação entre técnicos e clientes, garantindo conexões rápidas e manutenções confiáveis. 
+          Queremos ser a ponte que une eficiência e satisfação.</p>
     </div>
     <div class="card">
       <img src="./Main/Assets/Images/diamond.png" alt="Valores">
       <h3>Nossos valores</h3>
-      <p>Prezamos por liberdade digital, inovação contínua e o acesso democrático à informação.</p>
+      <p>Garantimos serviços transparentes e resultados duradouros.
+            Priorizando respostas rápidas e soluções eficientes.</p>
     </div>
-  </section>
+    <p class="slogan">Tecnologia que une, soluções que inspiram!</p>
+</section>
+
+<section class="services-section" id="services">
+  <div class="services-header">
+      <h2>Nossos Serviços</h2>
+      <p>Soluções completas para suas necessidades técnicas</p>
+  </div>
+  
+  <div class="services-grid">
+      <div class="service-card">
+          <i class="fas fa-network-wired service-icon"></i>
+          <h3>Manutenção Preventiva</h3>
+          <p>Monitoramento proativo para evitar maiores complicações no futuro.</p>
+      </div>
+
+      <div class="service-card">
+          <i class="fas fa-tools service-icon"></i>
+          <h3>Reparos Técnicos</h3>
+          <p>Soluções rápidas para problemas de hardware e software.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fa-solid fa-microchip service-icon"></i>
+          <h3>Peças e Instalação</h3>
+          <p>Facilidade na compra de peças e instalação.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fa-solid fa-wifi service-icon"></i>
+          <h3>Internet Solutions</h3>
+          <p>Soluções de sistemas e hardwares em geral.</p>
+      </div>
+  </div>
+</section>
+
 
   <footer class="footer">
     <div class="footer-content">
-      <p><i class="fa-solid fa-credit-card"></i> Saques via PIX em até 24h</p>
-      <p><i class="fa-solid fa-phone"></i> Contato: (49) 99999-9999</p>
+      <p><i class="fa-solid fa-credit-card"></i> Aceitamos pagamentos via PIX, Boleto e Cartão</p>
+      <p><i class="fa-solid fa-phone"></i> Contato: (49) 98871-3527</p>
       <p><i class="fa-solid fa-headset"></i> Suporte: <a href="mailto:suporte@itorrentweb.com">suporte@itorrentweb.com</a></p>
     </div>
   </footer>
