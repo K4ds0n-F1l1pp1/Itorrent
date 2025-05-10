@@ -31,11 +31,6 @@ $(document).ready( function() {
         }, 150);
     });
 
-    //---- Botão Switch ----\\
-    document.getElementById('button-switch').addEventListener('click', function () {
-        this.classList.toggle('active');
-    });
-
     //---- CONTENT ----\\
 
     //-- Validador de CPF --\\   
@@ -164,5 +159,23 @@ $(document).ready( function() {
                 'transition': 'width 0.3s ease'
             });
         });
+    });
+    //---- Confirmar Envio de Documentos ----\\
+    document.getElementById('resume-upload').addEventListener('change', function(e) {
+        const fileName = e.target.files[0] ? e.target.files[0].name : 'Nenhum arquivo selecionado';
+        document.getElementById('resume-name').textContent = fileName;
+    });
+
+    document.getElementById('certificates-upload').addEventListener('change', function(e) {
+        const files = e.target.files;
+        const namesContainer = document.getElementById('certificates-names');
+        
+        if (files.length === 0) {
+            namesContainer.textContent = 'Nenhum arquivo selecionado';
+        } else if (files.length === 1) {
+            namesContainer.textContent = files[0].name;
+        } else {
+            namesContainer.textContent = `${files.length} arquivos selecionados`;
+        }
     });
 })

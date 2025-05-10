@@ -32,7 +32,7 @@
     <a href="#" class="nav-logo">Itorrent</a>
     <div class="nav-links">
         <a href="index.html#services" class="nav-link">Services</a>
-        <a onclick="window.location.href='./Cadastro/SignUpTecnicos.html'" class="nav-link">
+        <a onclick="window.location.href='./Cadastro/SignUpTecnico.html'" class="nav-link">
           Trabalhe conosco!
         </a>
         <a href="#" class="nav-link get-app-btn">Get App</a>
@@ -53,14 +53,15 @@
     <div class="right">
       <form data-form>
         <div class="form-group">
-          <input type="email" placeholder="Digite seu e-mail" id="email" required data-input />
-          <i class="form-icon fa-solid fa-envelope"></i>
+          <input type="text" placeholder="Nome de Usuário" id="userName" required data-input />
+          <i class="form-icon fa-solid fa-user"></i>
           <span class="form-message-error" data-error></span>
         </div>
         <div class="form-group">
           <input type="password" placeholder="Senha" id="senha" required data-input />
           <i class="form-icon fa-solid fa-eye password-toggle" id="toggleSenha"></i>
           <span class="form-message-error" data-error></span>
+          <P>Esqueceu a Senha? <a href="#">Clique aqui para recuperar</a></P>
         </div>
         <button type="submit" class="login-button">Login</button>
       </form>
@@ -70,10 +71,6 @@
         <i class="fab fa-google"></i>
       </div>
     </div>
-  </div>
-
-  <div class="space-between">
-
   </div>
 
   <section class="cards-section">

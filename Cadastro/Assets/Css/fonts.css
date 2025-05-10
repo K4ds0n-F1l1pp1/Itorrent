@@ -108,3 +108,21 @@ body {
     margin-bottom: 5px;
     text-transform: uppercase;
 }
+
+.form-button_endereco {
+    font-family: var(--robotoRegular);
+    font-size: 1.5rem;
+    font-weight: var(--fontWeightMedium);
+    text-transform: uppercase;
+}
+
+.upload-button {
+    font-size: 1.4rem;
+}
+
+.file-name {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #333;
+    word-break: break-all;
+}

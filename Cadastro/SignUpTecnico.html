@@ -1,0 +1,296 @@
+<!-- 
+  A integridade deste código é inegociável.
+
+  A Itorrent Web detém a propriedade intelectual exclusiva.
+
+  Qualquer reprodução, distribuição, ou modificação não
+  autorizada será tratada com a máxima severidade legal.
+
+  Esteja ciente de que violações não apenas infringem nossos direitos,
+  mas também acarretam consequências legais e financeiras substanciais.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./Assets/Css/fonts.css" rel="stylesheet">
+    <link href="./Assets/Css/Styles.css" rel="stylesheet">
+    <link href="./Assets/Images/login.png" type="img/png" rel="icon">
+
+    <!-- Link para requisição da Font Awesome -->
+    <script src="https://kit.fontawesome.com/644cf35058.js" crossorigin="anonymous"></script>
+
+    <!-- Link para requisição do jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Link para requisição do JS -->
+    <script src="./Assets/JS/formValidation.js"></script>
+
+    <title>Register Yourself</title>
+</head>
+
+<script>
+    function toggleEndereco() {
+        const box = document.getElementById('extraEndereco');
+        box.style.display = (box.style.display === 'none' || box.style.display === '') ? 'block' : 'none';
+    }
+    
+    function salvarEndereco() {
+        const rua = document.getElementById('rua').value;
+        const numero = document.getElementById('numero').value;
+        const bairro = document.getElementById('bairro').value;
+        const cidade = document.getElementById('cidade').value;
+        const cep = document.getElementById('cep').value;
+        const complemento = document.getElementById('complemento').value;
+    
+        const resumo = `${rua}, Nº ${numero}${complemento ? ' (' + complemento + ')' : ''}, ${bairro}, ${cidade} - ${cep}`;
+    
+        document.getElementById('inputEnderecoUp').value = resumo;
+        document.getElementById('extraEndereco').style.display = 'none';
+    }
+
+    // Conta \\
+    function toggleConta() {
+        const box = document.getElementById('extraConta');
+        box.style.display = (box.style.display === 'none' || box.style.display === '') ? 'block' : 'none';
+    }
+    
+    function salvarConta() {
+        const banco = document.getElementById('banco').value;
+        const numero = document.getElementById('numeroConta').value;
+        const agencia = document.getElementById('agencia').value;
+        const nome = document.getElementById('nome').value;
+        const tipo = document.getElementById('tipo').value;
+        const pix = document.getElementById('pix').value;
+    
+        const resumo = `${banco} - ${nome}, Nº ${numero}, Agência: ${agencia} - ${tipo}, Chave: ${pix}`;
+    
+        document.getElementById('inputContaUp').value = resumo;
+        document.getElementById('extraConta').style.display = 'none';
+    }
+</script>
+
+<body>
+    <section class="card-signUp">
+        <div class="wrapper">
+            <div class="signUp">
+                <div class="back-button">
+                    <a href="../index.html" class="tooltip">
+                        <i class="fa-solid fa-arrow-left-long buttonBack"></i>
+                        <span class="tooltip-text">Voltar para a página inicial</span>
+                    </a>
+                </div>
+                <div class="logo">
+                    <a class="logo-link" href="../documentoEmpresa.html"></a>
+                </div>
+    
+                <h1 class="signUp-title"><strong>trabalhe conosco!</strong></h1>
+    
+                <form class="form" data-form>
+                    <div class="form-group">
+                        <label class="form-label hide" for="inputNameUp">Nome Completo</label>
+                        <input type="text" name="name" class="form-text" id="inputNameUp" placeholder="Nome Completo" required data-input/>
+                        <i class="form-icon fas fa-user"></i>
+                        <span class="form-message-error" data-error></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label hide" for="inputNameUp">Nome de Usuário</label>
+                        <input type="text" name="name" class="form-text" id="inputNameUp" placeholder="Nome de Usuário" required data-input/>
+                        <i class="form-icon fa-solid fa-user-tie"></i>
+                        <span class="form-message-error" data-error></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label hide" for="cpf">CPF</label>
+                        <input type="text" name="cpf" class="form-text" id="cpf" placeholder="000.000.000-00"  required data-input/>
+                        <i class="form-icon fa-solid fa-pen-nib"></i>
+                        <span class="form-message-error" data-error></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label hide" for="inputNameUp">Data de Nascimento</label>
+                        <input type="date" name="name" class="form-text" id="inputDate" placeholder="Seu aniversário" required data-input/>
+                        <i class="form-icon fa-solid fa-calendar-days"></i>
+                        <span class="form-message-error" data-error></span>
+                    </div>
+
+                    <div class="document-upload-container">
+                        <div class="upload-box" id="resume-box">
+                            <div class="upload-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="upload-title">Currículo</div>
+                            <div class="upload-description">Envie seu currículo em PDF (até 5MB)</div>
+                            <input type="file" id="resume-upload" class="file-input" accept=".pdf" required>
+                            <label for="resume-upload" class="upload-button">Selecionar Arquivo</label>
+                            <div id="resume-name" class="file-name">Nenhum arquivo selecionado</div>
+                        </div>
+
+                        <div class="upload-box" id="certificates-box">
+                            <div class="upload-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="upload-title">Certificados</div>
+                            <div class="upload-description">Envie seus certificados (PDF, JPG ou PNG)</div>
+                            <input type="file" id="certificates-upload" class="file-input" accept=".pdf,.jpg,.jpeg,.png" multiple required>
+                            <label for="certificates-upload" class="upload-button">Selecionar Arquivos</label>
+                            <div id="certificates-names" class="file-name">Nenhum arquivo selecionado</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="escolaridade" class="form-label hide">Nível de Escolaridade</label>
+                        <div class="select-box">
+                            <i class="form-icon fa-solid fa-graduation-cap"></i>
+                            <select id="escolaridade" name="escolaridade" required>
+                                <option class="form-label" disabled selected>Nível de Escolaridade</option>
+                                <option>Fundamental I</option>
+                                <option>Fundamental II</option>
+                                <option>Ensino Médio</option>
+                                <option>Ensino Superior</option>
+                                <option>Pós-Graduado</option>
+                                <option>Mestrado</option>
+                                <option>Doutorado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label hide" for="inputTelefoneUp">Telefone</label>
+                        <input type="text" name="telefone" class="form-text" id="inputTelefoneUp" placeholder="() ____-____"  required data-input/>
+                        <i class="form-icon fa-solid fa-phone"></i>
+                        <span class="form-message-error" data-error></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label hide" for="inputEmailUp">E-mail</label>
+                        <input type="email" name="email" class="form-text" id="inputEmailUp" placeholder="yourmail@web.com"  required data-input/>
+                        <i class="form-icon fa-solid fa-envelope"></i>
+                        <span class="form-message-error" data-error></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label hide">Conta Bancária</label>
+                        <div>
+                            <i class="form-icon fa-solid fa-building-columns"></i>
+                            <input type="text" name="conta" class="form-text" id="inputContaUp"
+                                placeholder="Clique para Adicionar dados da conta Bancária" readonly onclick="toggleConta()" />
+                        </div>
+                        <span class="form-message-error" data-error></span>
+                    </div>
+                    <div id="extraConta" class="extra-conta" style="display: none;">
+                        <div class="conta-box">
+                            <div class="conta-row">
+                                <input type="text" id="banco" placeholder="Banco" required>
+                            </div>
+                            <div class="conta-row">
+                                <input type="text" id="numeroConta" placeholder="Número da conta" required>
+                            </div>
+                            <div class="conta-row">
+                                <input type="text" id="agencia" placeholder="Agência" required>
+                            </div>
+                            <div class="conta-row">
+                                <input type="text" id="nome" placeholder="Nome Completo" required>
+                            </div>
+                            <div class="select-box-conta">
+                                <select type="text" id="tipo" placeholder="Tipo da Conta" required>
+                                    <option disabled selected>Tipo da conta</option>
+                                    <option>Poupança</option>
+                                    <option>Salário</option>
+                                    <option>Corrente</option>
+                                </select>
+                            </div>
+                            <div class="conta-row">
+                                <input type="text" id="pix" placeholder="Chave PIX" required>
+                            </div>
+                            <button class="form-button_endereco" type="button" onclick="salvarConta()">Salvar Conta</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label hide">Endereço</label>
+                        <div>
+                            <i class="form-icon fa-solid fa-location-dot"></i>
+                            <input type="text" name="conta" class="form-text" id="inputEnderecoUp"
+                                placeholder="Clique para adicionar endereço completo" readonly onclick="toggleEndereco()" />
+                        </div>
+                        <span class="form-message-error" data-error></span>
+                    </div>
+                    <div id="extraEndereco" class="extra-endereco" style="display: none;">
+                        <div class="endereco-box">
+                            <div class="conta-row">
+                                <input type="text" id="rua" placeholder="Rua" required>
+                            </div>
+                            <div class="endereco-row">
+                                <input type="text" id="numero" placeholder="Número" required>
+                            </div>
+                            <div class="endereco-row">
+                                <input type="text" id="complemento" placeholder="Complemento (opcional)">
+                            </div>
+                            <div class="endereco-row">
+                                <input type="text" id="bairro" placeholder="Bairro" required>
+                            </div>
+                            <div class="endereco-row">
+                                <input type="text" id="cidade" placeholder="Cidade" required>
+                            </div>
+                            <div class="endereco-row">
+                                <input type="text" id="cep" placeholder="CEP" required>
+                            </div>
+                            <button class="form-button_endereco" type="button" onclick="salvarEndereco()">Salvar Endereço</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label hide" for="inputSenhaUp">Senha</label>
+                        <input type="password" name="senha" class="form-text" id="inputSenhaUp" placeholder="Senha"  required data-input/>
+                        <i class="form-icon fas fa-lock"></i>
+                        <i class="form-icon fas fa-eye" data-toggle-password></i>
+
+                        <div class="progress-requirements-bar" data-requirement-progress></div>
+                        <span class="form-message-error" data-error></span>
+                        
+                        <div class="requirements">
+                            <div class="requirement-description">A senha deverá ter:</div>
+                            <ul class="requirements-list">
+                                <li class="requirements-item" data-requirement-item>
+                                    <i class="fas fa-circle-xmark"></i>
+                                    Pelo menos uma letra maiúscula e uma letra minúscula.</li>
+                                <li class="requirements-item" data-requirement-item>
+                                    <i class="fas fa-circle-xmark"></i>
+                                    Pelo menos um número.</li>
+                                <li class="requirements-item" data-requirement-item>
+                                    <i class="fas fa-circle-xmark"></i>
+                                    Pelo menos um caractere especial.</li>
+                                <li class="requirements-item" data-requirement-item>
+                                    <i class="fas fa-circle-xmark"></i>
+                                    Pelo menos 8 caracteres.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" name="terms" class="form-checkbox" id="inputTerms" required data-input/>
+                        <label class="checkbox-label hide" for="inputTerms">Concordo com os <a class="form-link" href="../Termos/termosUso.html" target="_blank">termos</a> e 
+                            <a class="form-link" href="#">políticas de privacidade</a>.</label>
+                    </div>
+                    <div class="form-group form-group-center">
+                        <button class="form-button-signUp" type="submit" id="button-switch">
+                            Cadastrar
+                        </button>
+                    </div>
+                </form>
+
+                <div class="social-login">
+                    <p class="texto-opcional-login">Ou entre com</p>
+                    <div class="social-icons">
+                        <button class="social-btn google"><i class="fab fa-google"></i></button>
+                        <button class="social-btn github"><i class="fab fa-github"></i></button>
+                    </div>
+                </div>
+
+                <div id="fakeLoading" class="loading-overlay">
+                    <i class="fas fa-spinner fa-spin loading-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

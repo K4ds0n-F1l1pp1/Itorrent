@@ -9,23 +9,18 @@ $(document).ready(function () {
   $('[data-form]').on('submit', function (e) {
     e.preventDefault();
 
-    const email = $('#email').val().trim();
+    const userName = $('#userName').val().trim();
     const senha = $('#senha').val().trim();
-
-    if (!email.includes('@') || senha.length < 3) {
-      alert('Preencha corretamente os campos.');
-      return;
-    }
 
     // Simulação de banco de dados
     const users = {
-      "cliente@teste.com": { senha: "123", tipo: "cliente" },
-      "admin@teste.com": { senha: "Admin@123", tipo: "admin" },
-      "tecnico@teste.com": { senha: "tec123", tipo: "tecnico" }
+      "ClienteTeste": { senha: "123@Dado", tipo: "cliente" },
+      "ADmTeste": { senha: "Admin@123", tipo: "admin" },
+      "TecnicoTeste": { senha: "tec123@2020", tipo: "tecnico"}
     };
 
-    if (users[email] && users[email].senha === senha) {
-      const tipo = users[email].tipo;
+    if (users[userName] && users[userName].senha === senha) {
+      const tipo = users[userName].tipo;
 
       // Redireciona com base no tipo
       if (tipo === "cliente") {
