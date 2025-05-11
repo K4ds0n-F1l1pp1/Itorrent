@@ -1,0 +1,353 @@
+:root {
+    --primary-color: #04364A;
+    --secondary-color: #4AC8FF;
+    --accent-color: #038C3E;
+    --dark-bg: #0B3140;
+    --light-bg: #F5F6F8;
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+    --azulClaro: #104D73;
+    --azulMarinho: #0B3140;
+    --verdeEsfolado: #025940;
+    --cinza: #F5F6F8;
+    --cinzaForte: #73767B;
+    --bordaInput: #EDEDF1;
+}
+
+/* Layout Principal */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-nav {
+    width: 250px;
+    background-color: var(--azulMarinho);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--light-bg);
+    overflow-y: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--cinzaForte);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--bordaInput);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+textarea.form-control {
+    min-height: 80px;
+    resize: vertical;
+}
+
+#editAdminModal .modal-content {
+    max-width: 600px;
+}
+
+/* Estilos compartilhados (omitos para brevidade) */
+/* ... (usar os mesmos estilos do relatorios.css para nav, header, etc) ... */
+
+/* Filtros */
+.filters {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.filter-group label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: var(--cinzaForte);
+}
+
+.filter-group select {
+    padding: 8px 12px;
+    border: 1px solid var(--bordaInput);
+    border-radius: 4px;
+    background-color: white;
+}
+
+.apply-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.apply-btn:hover {
+    background-color: var(--azulClaro);
+}
+
+/* Tabela de Administradores */
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+#adminsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#adminsTable th, #adminsTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--bordaInput);
+}
+
+#adminsTable th {
+    background-color: var(--azulMarinho);
+    color: var(--text-light);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--azulMarinho);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.admin-cell {
+    display: flex;
+    align-items: center;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-online {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.status-offline {
+    background-color: #F8D7DA;
+    color: #721C24;
+}
+
+.access-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.access-super {
+    background-color: #E2E3E5;
+    color: #383D41;
+}
+
+.access-regional {
+    background-color: #D1ECF1;
+    color: #0C5460;
+}
+
+.access-support {
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.techs-assisted {
+    font-size: 0.9rem;
+    color: var(--cinzaForte);
+}
+
+.techs-assisted span {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    padding: 2px 6px;
+    background-color: #E2E3E5;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.action-btn {
+    padding: 6px 10px;
+    margin: 0 3px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+}
+
+.view-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: var(--azulClaro);
+}
+
+.edit-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: var(--verdeEsfolado);
+}
+
+/* Modal de Detalhes */
+.admin-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--bordaInput);
+}
+
+.admin-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+.admin-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.admin-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.stat-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid var(--bordaInput);
+    border-radius: 8px;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(74, 200, 255, 0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-value {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--cinzaForte);
+}
+
+.techs-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.techs-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--bordaInput);
+}
+
+.techs-list li:last-child {
+    border-bottom: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .admin-stats {
+        flex-direction: column;
+    }
+    
+    .stat-card {
+        width: 100%;
+    }
+    
+    #adminsTable th, #adminsTable td {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .action-btn {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+    }
+}

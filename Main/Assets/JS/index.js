@@ -16,7 +16,7 @@ $(document).ready(function () {
     const users = {
       "ClienteTeste": { senha: "123@Dado", tipo: "cliente" },
       "ADmTeste": { senha: "Admin@123", tipo: "admin" },
-      "TecnicoTeste": { senha: "tec123@2020", tipo: "tecnico"}
+      "TecnicoTeste": { senha: "Tec123@2020", tipo: "tecnico"}
     };
 
     if (users[userName] && users[userName].senha === senha) {

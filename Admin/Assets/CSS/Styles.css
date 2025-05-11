@@ -8,6 +8,21 @@
     --text-dark: #333333;
 }
 
+:root {
+    --azulClaro: #104D73;
+    --azulMarinho: #0B3140;
+    --azulEsfolado: #025E73;
+    --verdeMusgo: #012626;
+    --azulBebe: #6AD9D9;
+    --verdeMorto: #014034;
+    --azulForte: #071D26;
+    --verdeVivido: #038C3E;
+    --verdeEsfolado: #025940;
+    --cinza: #F5F6F8;
+    --cinzaForte: #73767B;
+    --bordaInput: #EDEDF1;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,14 +33,14 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: var(--light-bg);
+    background-color: var(--verdeMusgo);
 }
 
 /* NAVBAR */
 .admin-nav {
     width: 250px;
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: var(--azulMarinho);
+    color: var(--light-bg);
     padding: 20px 0;
     height: 100vh;
     position: sticky;
@@ -48,7 +63,7 @@ body {
 }
 
 .admin-nav-header h2 i {
-    color: var(--secondary-color);
+    color: var(--azulBebe);
 }
 
 .nav-menu {
@@ -68,7 +83,7 @@ body {
 
 .nav-item:hover, .nav-item.active {
     background-color: rgba(255, 255, 255, 0.1);
-    border-left: 3px solid var(--secondary-color);
+    border-left: 3px solid var(--azulForte);
 }
 
 .nav-item i {
@@ -92,7 +107,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--secondary-color);
+    background-color: var(--azulForte);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,7 +150,7 @@ body {
 
 .dashboard-title {
     font-size: 1.8rem;
-    color: var(--primary-color);
+    color: var(--light-bg);
 }
 
 .search-bar {
@@ -161,11 +176,12 @@ body {
 
 /* MAP SECTION */
 .map-container {
+    border: .3rem solid var(--text-dark);
+    box-shadow: 1rem 1rem 1rem 0 var(--azulForte);
     height: 350px;
     background-color: #ddd;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #technicians-map {
@@ -178,7 +194,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 1rem;
 }
 
 .technician-card {
@@ -237,7 +253,7 @@ body {
 
 .stat-value {
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--azulEsfolado);
 }
 
 .stat-label {
@@ -246,6 +262,7 @@ body {
 }
 
 /* REPORTS SECTION */
+
 .reports-section {
     background-color: white;
     border-radius: 10px;
@@ -255,7 +272,15 @@ body {
 }
 
 .section-title {
-    color: var(--primary-color);
+    color: var(--light-bg);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title-black {
+    color: var(--text-dark);
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -282,12 +307,12 @@ body {
 
 .report-card i {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--azulMarinho);
     margin-bottom: 10px;
 }
 
 .report-card h4 {
-    color: var(--primary-color);
+    color: var(--azulClaro);
     margin-bottom: 5px;
 }
 
@@ -316,7 +341,7 @@ body {
 }
 
 .chat-header i {
-    color: var(--primary-color);
+    color: var(--azulEsfolado);
 }
 
 .chat-messages {
@@ -332,14 +357,14 @@ body {
 
 .received {
     align-self: flex-start;
-    background-color: var(--light-bg);
+    background-color: var(--azulBebe);
     padding: 10px 15px;
     border-radius: 0 10px 10px 10px;
 }
 
 .sent {
     align-self: flex-end;
-    background-color: var(--secondary-color);
+    background-color: var(--azulClaro);
     color: white;
     padding: 10px 15px;
     border-radius: 10px 0 10px 10px;
@@ -367,7 +392,7 @@ body {
 }
 
 .chat-input button {
-    background-color: var(--secondary-color);
+    background-color: var(--cinzaForte);
     color: white;
     border: none;
     border-radius: 50%;
@@ -377,7 +402,7 @@ body {
     cursor: pointer;
 }
 
-/* MODAL */
+/* MODAL
 .modal {
     display: none;
     position: fixed;
@@ -408,7 +433,7 @@ body {
 }
 
 .modal-header h3 {
-    color: var(--primary-color);
+    color: var(--verdeMusgo);
 }
 
 .close-modal {
@@ -440,7 +465,7 @@ body {
     justify-content: flex-end;
     gap: 10px;
     margin-top: 20px;
-}
+} */
 
 .btn {
     padding: 10px 20px;
@@ -472,5 +497,5 @@ body {
     
     .technicians-cards {
         grid-template-columns: 1fr;
-    }
+    } 
 }

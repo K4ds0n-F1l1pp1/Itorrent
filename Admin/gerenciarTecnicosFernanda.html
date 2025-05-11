@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Técnicos</title>
+    <link rel="stylesheet" href="./Assets/CSS/gerenciadorTecnicos.css">
+    <link rel="icon" href="./Assets/Images/table.png">
+
+    <!-- Link para requisição da Font Awesome -->
+    <script src="https://kit.fontawesome.com/644cf35058.js" crossorigin="anonymous"></script>
+
+    <!-- Link para requisição do jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    </div>
+        <a href="./index.html" class="logout-btn" style="text-decoration: none; display: inline-block;">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Voltar</span>
+        </a>
+    </div>
+
+    <h1><i class="fas fa-users-cog"></i> Gerenciar Técnicos</h1>
+    <div class="table-container">
+        <table id="techniciansTable">
+            <thead>
+                <tr>
+                    <th>Nome Completo</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Login</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados serão inseridos via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="fineModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Aplicar Multa</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="fineAmount">Valor da Multa (R$)</label>
+                    <input type="number" id="fineAmount" class="form-control" min="0" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="fineReason">Motivo da Multa</label>
+                    <textarea id="fineReason" class="form-control" placeholder="Descreva o motivo da multa..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal">Cancelar</button>
+                <button id="confirmFine" class="btn btn-primary">Aplicar Multa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Aprovação de Peças -->
+    <div id="approvalModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Aprovar Pedido de Peças</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="partsRequestInfo" style="margin-bottom: 20px;">
+                    <h4>Peças Solicitadas:</h4>
+                    <ul id="partsList"></ul>
+                    <p><strong>Total:</strong> R$ <span id="partsTotal">0,00</span></p>
+                </div>
+                <div class="form-group">
+                    <label for="approvalDecision">Decisão</label>
+                    <select id="approvalDecision" class="form-control">
+                        <option value="">Selecione...</option>
+                        <option value="approve">Aprovar</option>
+                        <option value="reject">Rejeitar</option>
+                    </select>
+                </div>
+                <div class="form-group" id="rejectionReasonGroup" style="display: none;">
+                    <label for="rejectionReason">Motivo da Rejeição</label>
+                    <textarea id="rejectionReason" class="form-control" placeholder="Descreva o motivo da rejeição..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal">Cancelar</button>
+                <button id="confirmApproval" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Editar Técnico</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="editName">Nome Completo</label>
+                    <input type="text" id="editName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">E-mail</label>
+                    <input type="email" id="editEmail" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="editPhone">Telefone</label>
+                    <input type="tel" id="editPhone" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="editStatus">Status</label>
+                    <select id="editStatus" class="form-control">
+                        <option value="active">Ativo</option>
+                        <option value="inactive">Inativo</option>
+                        <option value="suspended">Suspenso</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal">Cancelar</button>
+                <button id="saveChanges" class="btn btn-primary">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+    <script src="./Assets/JS/gerenciadorTecnicosFernanda.js"></script>
+</body>
+</html>
