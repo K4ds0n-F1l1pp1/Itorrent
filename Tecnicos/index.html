@@ -18,240 +18,160 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 </head>
 <body>
-    <body>
-        <!-- BARRA LATERAL -->
-        <nav class="barra-lateral">
-            <div class="cabecalho-barra">
-                <h2><i class="fas fa-user-cog"></i> Área do Técnico</h2>
-            </div>
-            
-            <div class="menu-navegacao">
-                <div class="item-menu ativo">
-                    <i class="fas fa-home"></i>
-                    <span>Início</span>
-                </div>
-                <div class="item-menu">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>Pedidos Disponíveis</span>
-                </div>
-                <div class="item-menu">
-                    <i class="fas fa-tools"></i>
-                    <span>Meus Serviços</span>
-                </div>
-                <div class="item-menu">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <span>Orçamentos</span>
-                    <div class="notificacao-alerta">2</div>
-                </div>
-                <div class="item-menu">
-                    <i class="fas fa-comments"></i>
-                    <span>Chat</span>
-                </div>
-                <div class="item-menu">
-                    <i class="fas fa-box-open"></i>
-                    <span>Pedir Peças</span>
-                </div>
-                <div class="item-menu">
-                    <i class="fas fa-user-circle"></i>
-                    <span>Meu Perfil</span>
-                </div>
-                <div class="item-menu">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <span>Multas</span>
-                    <div class="notificacao-alerta">1</div>
-                </div>
-            </div>
-            
-            <div class="rodape-barra">
-                <div class="info-usuario">
-                    <div class="avatar-usuario">TJ</div>
-                    <div>
-                        <div>Técnico João</div>
-                        <small>Técnico de TI</small>
-                    </div>
-                </div>
-                <button class="botao-sair">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Sair</span>
-                </button>
-            </div>
-        </nav>
+    <nav class="barra-lateral">
+        <div class="cabecalho-barra">
+            <h2><i class="fas fa-user-cog"></i> Área do Técnico</h2>
+        </div>
         
-        <!-- CONTEÚDO PRINCIPAL -->
-        <main class="conteudo-principal">
-            <!-- PÁGINA INICIAL -->
-            <div class="pagina-inicio">
-                <div class="cabecalho-pagina">
-                    <h1 class="titulo-pagina">Bem-vindo, João!</h1>
-                    <div class="barra-pesquisa">
-                        <input type="text" placeholder="Pesquisar...">
-                        <i class="fas fa-search"></i>
-                    </div>
+        <div class="menu-navegacao">
+            <div class="item-menu ativo">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Pedidos Disponíveis</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-tools"></i>
+                <span>Meus Serviços</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>Orçamentos</span>
+                <div class="notificacao-alerta">2</div>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-comments"></i>
+                <span>Chat</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-box-open"></i>
+                <span>Pedir Peças</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-user-circle"></i>
+                <span>Meu Perfil</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Multas</span>
+                <div class="notificacao-alerta">1</div>
+            </div>
+        </div>
+        
+        <div class="rodape-barra">
+            <div class="info-usuario">
+                <div class="avatar-usuario">TJ</div>
+                <div>
+                    <div>Técnico João</div>
+                    <small>Técnico de TI</small>
                 </div>
-                
-                <!-- NOTIFICAÇÃO DE MULTA -->
-                <div class="notificacao-multa">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <div>
-                        <strong>Você tem 1 multa pendente!</strong>
-                        <p>Motivo: Atraso na entrega do serviço #1234</p>
-                    </div>
+            </div>
+            <button class="botao-sair">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Sair</span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="conteudo-principal">
+        <!-- PÁGINA INICIAL -->
+        <div class="pagina-inicio">
+            <div class="cabecalho-pagina">
+                <h1 class="titulo-pagina">Bem-vindo, João!</h1>
+                <div class="barra-pesquisa">
+                    <input type="text" placeholder="Pesquisar...">
+                    <i class="fas fa-search"></i>
                 </div>
-                
-                <!-- PEDIDOS DISPONÍVEIS -->
-                <h2 class="titulo-secao"><i class="fas fa-clipboard-list"></i> Pedidos Disponíveis</h2>
-                <div class="secao-pedidos">
-                    <!-- Pedido 1 -->
-                    <div class="cartao-pedido">
-                        <div class="cabecalho-cartao">
-                            <div class="info-cliente">
-                                <div class="avatar-cliente">CE</div>
-                                <div>
-                                    <h3>Cliente Exemplo</h3>
-                                    <p>2km de distância</p>
-                                </div>
-                            </div>
-                            <span class="status-pedido status-disponivel">DISPONÍVEL</span>
-                        </div>
-                        
-                        <div class="detalhes-pedido">
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Serviço:</span>
-                                <span class="valor-detalhe">Manutenção de Computador</span>
-                            </div>
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Descrição:</span>
-                                <span class="valor-detalhe">Computador não liga e faz barulho estranho</span>
-                            </div>
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Prazo:</span>
-                                <span class="valor-detalhe">Até 20/06/2023</span>
+            </div>
+            
+            <!-- NOTIFICAÇÃO DE MULTA -->
+            <div class="notificacao-multa">
+                <i class="fas fa-exclamation-circle"></i>
+                <div>
+                    <strong>Você tem 1 multa pendente!</strong>
+                    <p>Motivo: Atraso na entrega do serviço #1234</p>
+                </div>
+            </div>
+            
+            <!-- PEDIDOS DISPONÍVEIS -->
+            <h2 class="titulo-secao"><i class="fas fa-clipboard-list"></i> Pedidos Disponíveis</h2>
+            <div class="secao-pedidos">
+                <!-- Pedido 1 -->
+                <div class="cartao-pedido">
+                    <div class="cabecalho-cartao">
+                        <div class="info-cliente">
+                            <div class="avatar-cliente">CE</div>
+                            <div>
+                                <h3>Cliente Exemplo</h3>
+                                <p>2km de distância</p>
                             </div>
                         </div>
-                        
-                        <div class="acoes-pedido">
-                            <button class="botao-acao botao-secundario">Detalhes</button>
-                            <button class="botao-acao botao-primario">Aceitar</button>
+                        <span class="status-pedido status-disponivel">DISPONÍVEL</span>
+                    </div>
+                    
+                    <div class="detalhes-pedido">
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Serviço:</span>
+                            <span class="valor-detalhe">Manutenção de Computador</span>
+                        </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Descrição:</span>
+                            <span class="valor-detalhe">Computador não liga e faz barulho estranho</span>
+                        </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Prazo:</span>
+                            <span class="valor-detalhe">Até 20/06/2023</span>
                         </div>
                     </div>
                     
-                    <!-- Pedido 2 -->
-                    <div class="cartao-pedido">
-                        <div class="cabecalho-cartao">
-                            <div class="info-cliente">
-                                <div class="avatar-cliente">MS</div>
-                                <div>
-                                    <h3>Maria Silva</h3>
-                                    <p>5km de distância</p>
-                                </div>
-                            </div>
-                            <span class="status-pedido status-disponivel">DISPONÍVEL</span>
-                        </div>
-                        
-                        <div class="detalhes-pedido">
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Serviço:</span>
-                                <span class="valor-detalhe">Configuração de Rede</span>
-                            </div>
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Descrição:</span>
-                                <span class="valor-detalhe">Preciso configurar rede Wi-Fi e cabeada em pequeno escritório</span>
-                            </div>
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Prazo:</span>
-                                <span class="valor-detalhe">Até 25/06/2023</span>
-                            </div>
-                        </div>
-                        
-                        <div class="acoes-pedido">
-                            <button class="botao-acao botao-secundario">Detalhes</button>
-                            <button class="botao-acao botao-primario">Aceitar</button>
-                        </div>
+                    <div class="acoes-pedido">
+                        <button class="botao-acao botao-secundario">Detalhes</button>
+                        <button class="botao-acao botao-primario">Aceitar</button>
                     </div>
                 </div>
                 
-                <!-- MEUS SERVIÇOS -->
-                <h2 class="titulo-secao"><i class="fas fa-tools"></i> Meus Serviços</h2>
-                <div class="secao-pedidos">
-                    <!-- Serviço 1 -->
-                    <div class="cartao-pedido">
-                        <div class="cabecalho-cartao">
-                            <div class="info-cliente">
-                                <div class="avatar-cliente">CE</div>
-                                <div>
-                                    <h3>Cliente Exemplo</h3>
-                                    <p>2km de distância</p>
-                                </div>
-                            </div>
-                            <span class="status-pedido status-andamento">EM ANDAMENTO</span>
-                        </div>
-                        
-                        <div class="detalhes-pedido">
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Serviço:</span>
-                                <span class="valor-detalhe">Manutenção de Computador</span>
-                            </div>
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Orçamento:</span>
-                                <span class="valor-detalhe">R$ 250,00</span>
-                            </div>
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Prazo:</span>
-                                <span class="valor-detalhe">Até 20/06/2023</span>
+                <!-- Pedido 2 -->
+                <div class="cartao-pedido">
+                    <div class="cabecalho-cartao">
+                        <div class="info-cliente">
+                            <div class="avatar-cliente">MS</div>
+                            <div>
+                                <h3>Maria Silva</h3>
+                                <p>5km de distância</p>
                             </div>
                         </div>
-                        
-                        <div class="acoes-pedido">
-                            <button class="botao-acao botao-secundario">Acompanhar</button>
-                            <button class="botao-acao botao-primario">Chat</button>
+                        <span class="status-pedido status-disponivel">DISPONÍVEL</span>
+                    </div>
+                    
+                    <div class="detalhes-pedido">
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Serviço:</span>
+                            <span class="valor-detalhe">Configuração de Rede</span>
+                        </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Descrição:</span>
+                            <span class="valor-detalhe">Preciso configurar rede Wi-Fi e cabeada em pequeno escritório</span>
+                        </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Prazo:</span>
+                            <span class="valor-detalhe">Até 25/06/2023</span>
                         </div>
                     </div>
                     
-                    <!-- Serviço 2 -->
-                    <div class="cartao-pedido">
-                        <div class="cabecalho-cartao">
-                            <div class="info-cliente">
-                                <div class="avatar-cliente">AS</div>
-                                <div>
-                                    <h3>Ana Souza</h3>
-                                    <p>3km de distância</p>
-                                </div>
-                            </div>
-                            <span class="status-pedido status-pendente">AGUARDANDO PEÇAS</span>
-                        </div>
-                        
-                        <div class="detalhes-pedido">
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Serviço:</span>
-                                <span class="valor-detalhe">Troca de HD por SSD</span>
-                            </div>
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Orçamento:</span>
-                                <span class="valor-detalhe">R$ 400,00</span>
-                            </div>
-                            <div class="linha-detalhe">
-                                <span class="rotulo-detalhe">Prazo:</span>
-                                <span class="valor-detalhe">Até 22/06/2023</span>
-                            </div>
-                        </div>
-                        
-                        <div class="acoes-pedido">
-                            <button class="botao-acao botao-secundario">Pedir Peças</button>
-                            <button class="botao-acao botao-primario">Chat</button>
-                        </div>
+                    <div class="acoes-pedido">
+                        <button class="botao-acao botao-secundario">Detalhes</button>
+                        <button class="botao-acao botao-primario">Aceitar</button>
                     </div>
                 </div>
             </div>
             
-            <!-- PÁGINA DE ACOMPANHAMENTO -->
-            <div class="pagina-acompanhamento" style="display: none;">
-                <div class="cabecalho-pagina">
-                    <h1 class="titulo-pagina">Acompanhamento de Serviço</h1>
-                    <button class="botao-acao botao-primario voltar-servicos">
-                        <i class="fas fa-arrow-left"></i> Voltar
-                    </button>
-                </div>
-                
+            <!-- MEUS SERVIÇOS -->
+            <h2 class="titulo-secao"><i class="fas fa-tools"></i> Meus Serviços</h2>
+            <div class="secao-pedidos">
+                <!-- Serviço 1 -->
                 <div class="cartao-pedido">
                     <div class="cabecalho-cartao">
                         <div class="info-cliente">
@@ -279,306 +199,384 @@
                         </div>
                     </div>
                     
-                    <h3 class="titulo-secao"><i class="fas fa-tasks"></i> Etapas do Serviço</h3>
+                    <div class="acoes-pedido">
+                        <button class="botao-acao botao-secundario">Acompanhar</button>
+                        <button class="botao-acao botao-primario">Chat</button>
+                    </div>
+                </div>
+                
+                <!-- Serviço 2 -->
+                <div class="cartao-pedido">
+                    <div class="cabecalho-cartao">
+                        <div class="info-cliente">
+                            <div class="avatar-cliente">AS</div>
+                            <div>
+                                <h3>Ana Souza</h3>
+                                <p>3km de distância</p>
+                            </div>
+                        </div>
+                        <span class="status-pedido status-pendente">AGUARDANDO PEÇAS</span>
+                    </div>
                     
-                    <div class="etapas-servico">
-                        <!-- Etapa 1 -->
-                        <div class="etapa">
-                            <div class="icone-etapa">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <div class="conteudo-etapa">
-                                <div class="titulo-etapa">Diagnóstico Inicial</div>
-                                <p>Identificar o problema relatado pelo cliente</p>
-                                <span class="status-etapa status-concluido">CONCLUÍDO</span>
-                            </div>
+                    <div class="detalhes-pedido">
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Serviço:</span>
+                            <span class="valor-detalhe">Troca de HD por SSD</span>
                         </div>
-                        
-                        <!-- Etapa 2 -->
-                        <div class="etapa">
-                            <div class="icone-etapa">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <div class="conteudo-etapa">
-                                <div class="titulo-etapa">Compra de Peças</div>
-                                <p>Fonte ATX 500W - Aguardando aprovação do cliente</p>
-                                <span class="status-etapa status-pendente">PENDENTE</span>
-                            </div>
-                            <div class="acoes-etapa">
-                                <button class="botao-acao botao-secundario">Detalhes</button>
-                            </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Orçamento:</span>
+                            <span class="valor-detalhe">R$ 400,00</span>
                         </div>
-                        
-                        <!-- Etapa 3 -->
-                        <div class="etapa">
-                            <div class="icone-etapa">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <div class="conteudo-etapa">
-                                <div class="titulo-etapa">Reparo</div>
-                                <p>Substituição da fonte e limpeza interna</p>
-                                <span class="status-etapa status-andamento">EM ANDAMENTO</span>
-                            </div>
-                            <div class="acoes-etapa">
-                                <button class="botao-acao botao-primario">Atualizar</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Etapa 4 -->
-                        <div class="etapa">
-                            <div class="icone-etapa">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="conteudo-etapa">
-                                <div class="titulo-etapa">Testes Finais</div>
-                                <p>Verificar funcionamento e estabilidade do sistema</p>
-                                <span class="status-etapa status-pendente">PENDENTE</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Etapa 5 -->
-                        <div class="etapa">
-                            <div class="icone-etapa">
-                                <i class="fas fa-file-invoice-dollar"></i>
-                            </div>
-                            <div class="conteudo-etapa">
-                                <div class="titulo-etapa">Encerramento</div>
-                                <p>Emitir nota fiscal e receber pagamento</p>
-                                <span class="status-etapa status-pendente">PENDENTE</span>
-                            </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Prazo:</span>
+                            <span class="valor-detalhe">Até 22/06/2023</span>
                         </div>
                     </div>
                     
                     <div class="acoes-pedido">
-                        <button class="botao-acao botao-alerta">Reportar Problema</button>
-                        <button class="botao-acao botao-primario">Atualizar Progresso</button>
+                        <button class="botao-acao botao-secundario">Pedir Peças</button>
+                        <button class="botao-acao botao-primario">Chat</button>
                     </div>
-                </div>
-            </div>
-            
-            <!-- PÁGINA DE PERFIL -->
-            <div class="pagina-perfil" style="display: none;">
-                <h2 class="titulo-secao"><i class="fas fa-user-circle"></i> Meu Perfil</h2>
-                
-                <div class="mensagem-aviso">
-                    <i class="fas fa-info-circle"></i>
-                    <span>Alterações no perfil estão sujeitas à aprovação do administrador</span>
-                </div>
-                
-                <div class="secao-pedido">
-                    <form class="formulario-perfil" id="formularioPerfilTecnico">
-                        <div class="grupo-formulario-perfil">
-                            <label for="nome-tecnico">Nome Completo</label>
-                            <input type="text" id="nome-tecnico" value="João da Silva" required>
-                        </div>
-                        
-                        <div class="grupo-formulario-perfil">
-                            <label for="especialidade-tecnico">Especialidade</label>
-                            <select id="especialidade-tecnico" required>
-                                <option value="ti">Técnico de TI</option>
-                                <option value="eletrica">Eletricista</option>
-                                <option value="hidraulica">Hidráulica</option>
-                                <option value="outros">Outros</option>
-                            </select>
-                        </div>
-                        
-                        <div class="grupo-formulario-perfil">
-                            <label for="email-tecnico">E-mail</label>
-                            <input type="email" id="email-tecnico" value="joao@tecnico.com" required>
-                        </div>
-                        
-                        <div class="grupo-formulario-perfil">
-                            <label for="telefone-tecnico">Telefone</label>
-                            <input type="tel" id="telefone-tecnico" value="(11) 98765-4321" required>
-                        </div>
-                        
-                        <div class="grupo-formulario-perfil">
-                            <label for="login-tecnico">Nome de Login</label>
-                            <input type="text" id="login-tecnico" value="joao_tecnico" required>
-                        </div>
-                        
-                        <div class="grupo-formulario-perfil">
-                            <label for="senha-tecnico">Alterar Senha</label>
-                            <input type="password" id="senha-tecnico" placeholder="Deixe em branco para manter a atual">
-                        </div>
-                        
-                        <div class="grupo-formulario-perfil">
-                            <label for="confirmar-senha-tecnico">Confirmar Senha</label>
-                            <input type="password" id="confirmar-senha-tecnico" placeholder="Confirme a nova senha">
-                        </div>
-                        
-                        <div class="grupo-formulario-perfil">
-                            <label for="sobre-tecnico">Sobre Mim</label>
-                            <textarea id="sobre-tecnico" placeholder="Descreva suas qualificações e experiência">Técnico em informática com 5 anos de experiência, especializado em manutenção de hardware e redes.</textarea>
-                        </div>
-                        
-                        <button type="submit" class="botao-acao botao-primario">Solicitar Atualização</button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- PÁGINA DE CHAT -->
-            <div class="pagina-chat" style="display: none;">
-                <h2 class="titulo-secao"><i class="fas fa-comments"></i> Chat com Cliente</h2>
-                
-                <div class="secao-chat">
-                    <div class="cabecalho-chat">
-                        <i class="fas fa-user-circle"></i>
-                        <h3>Conversa com Cliente Exemplo</h3>
-                    </div>
-                    
-                    <div class="mensagens-chat">
-                        <div class="mensagem mensagem-recebida">
-                            <div class="info-mensagem">
-                                <span>Cliente Exemplo</span>
-                                <span>10:30 AM</span>
-                            </div>
-                            <p>Bom dia! Meu computador não está ligando, só faz um barulho estranho quando aperto o botão</p>
-                        </div>
-                        
-                        <div class="mensagem mensagem-enviada">
-                            <div class="info-mensagem">
-                                <span>Você</span>
-                                <span>10:35 AM</span>
-                            </div>
-                            <p>Bom dia! Pode me enviar uma foto ou vídeo do barulho? Pode ser problema na fonte</p>
-                        </div>
-                        
-                        <div class="mensagem mensagem-recebida">
-                            <div class="info-mensagem">
-                                <span>Cliente Exemplo</span>
-                                <span>10:40 AM</span>
-                            </div>
-                            <p>Enviei no e-mail. O barulho parece vir da parte de trás do gabinete</p>
-                        </div>
-                    </div>
-                    
-                    <div class="entrada-chat">
-                        <input type="text" placeholder="Digite sua mensagem..." id="mensagem-chat-tecnico">
-                        <button id="enviar-mensagem-tecnico"><i class="fas fa-paper-plane"></i></button>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <div class="modal" id="modalOrcamentoTecnico">
-            <div class="conteudo-modal">
-                <div class="cabecalho-modal">
-                    <h3><i class="fas fa-file-invoice-dollar"></i> Criar Orçamento</h3>
-                    <button class="botao-fechar">&times;</button>
-                </div>
-                
-                <div class="grupo-formulario-perfil">
-                    <label for="pecas-necessarias">Peças Necessárias</label>
-                    <textarea id="pecas-necessarias" placeholder="Liste todas as peças necessárias para o serviço"></textarea>
-                </div>
-                
-                <div class="grupo-formulario-perfil">
-                    <label for="descricao-servico">O que será feito</label>
-                    <textarea id="descricao-servico" placeholder="Descreva detalhadamente o serviço que será realizado"></textarea>
-                </div>
-                
-                <div class="grupo-formulario-perfil">
-                    <label for="valor-servico">Valor do Serviço (R$)</label>
-                    <input type="number" id="valor-servico" placeholder="0,00" step="0.01">
-                </div>
-                
-                <div class="grupo-formulario-perfil">
-                    <label for="tempo-servico">Tempo Estimado</label>
-                    <input type="text" id="tempo-servico" placeholder="Ex: 2 horas ou 1 dia">
-                </div>
-                
-                <div class="grupo-formulario-perfil">
-                    <label for="notas-servico">Notas Adicionais</label>
-                    <textarea id="notas-servico" placeholder="Informações adicionais para o cliente"></textarea>
-                </div>
-                
-                <div class="rodape-modal">
-                    <button class="botao botao-cancelar">Cancelar</button>
-                    <button class="botao botao-confirmar">Enviar Orçamento</button>
                 </div>
             </div>
         </div>
-
-        <div class="modal" id="modalPedidoPecas">
-            <div class="conteudo-modal">
-                <div class="cabecalho-modal">
-                    <h3><i class="fas fa-box-open"></i> Solicitar Peças</h3>
-                    <button class="botao-fechar">&times;</button>
-                </div>
-                
-                <div class="lista-pecas">
-                    <div class="item-peca">
-                        <input type="text" placeholder="Nome da peça" value="Fonte ATX 500W">
-                        <input type="number" placeholder="Qtd." value="1">
-                        <input type="text" placeholder="Preço unitário" value="R$ 150,00">
-                    </div>
-                    <div class="item-peca">
-                        <input type="text" placeholder="Nome da peça" value="HDMI 2.0 2m">
-                        <input type="number" placeholder="Qtd." value="1">
-                        <input type="text" placeholder="Preço unitário" value="R$ 25,00">
-                    </div>
-                </div>
-                
-                <button class="botao-adicionar">
-                    <i class="fas fa-plus"></i> Adicionar Peça
+        
+        <!-- PÁGINA DE ACOMPANHAMENTO -->
+        <div class="pagina-acompanhamento" style="display: none;">
+            <div class="cabecalho-pagina">
+                <h1 class="titulo-pagina">Acompanhamento de Serviço</h1>
+                <button class="botao-acao botao-primario voltar-servicos">
+                    <i class="fas fa-arrow-left"></i> Voltar
                 </button>
-                
-                <div class="grupo-formulario-perfil" style="margin-top: 20px;">
-                    <label for="observacoes-pecas">Observações</label>
-                    <textarea id="observacoes-pecas" placeholder="Informações adicionais sobre as peças solicitadas"></textarea>
+            </div>
+            
+            <div class="cartao-pedido">
+                <div class="cabecalho-cartao">
+                    <div class="info-cliente">
+                        <div class="avatar-cliente">CE</div>
+                        <div>
+                            <h3>Cliente Exemplo</h3>
+                            <p>2km de distância</p>
+                        </div>
+                    </div>
+                    <span class="status-pedido status-andamento">EM ANDAMENTO</span>
                 </div>
                 
-                <div class="rodape-modal">
-                    <button class="botao botao-cancelar">Cancelar</button>
-                    <button class="botao botao-confirmar">Enviar Pedido</button>
+                <div class="detalhes-pedido">
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Serviço:</span>
+                        <span class="valor-detalhe">Manutenção de Computador</span>
+                    </div>
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Orçamento:</span>
+                        <span class="valor-detalhe">R$ 250,00</span>
+                    </div>
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Prazo:</span>
+                        <span class="valor-detalhe">Até 20/06/2023</span>
+                    </div>
+                </div>
+                
+                <h3 class="titulo-secao"><i class="fas fa-tasks"></i> Etapas do Serviço</h3>
+                
+                <div class="etapas-servico">
+                    <!-- Etapa 1 -->
+                    <div class="etapa">
+                        <div class="icone-etapa">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="conteudo-etapa">
+                            <div class="titulo-etapa">Diagnóstico Inicial</div>
+                            <p>Identificar o problema relatado pelo cliente</p>
+                            <span class="status-etapa status-concluido">CONCLUÍDO</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 2 -->
+                    <div class="etapa">
+                        <div class="icone-etapa">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="conteudo-etapa">
+                            <div class="titulo-etapa">Compra de Peças</div>
+                            <p>Fonte ATX 500W - Aguardando aprovação do cliente</p>
+                            <span class="status-etapa status-pendente">PENDENTE</span>
+                        </div>
+                        <div class="acoes-etapa">
+                            <button class="botao-acao botao-secundario">Detalhes</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 3 -->
+                    <div class="etapa">
+                        <div class="icone-etapa">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="conteudo-etapa">
+                            <div class="titulo-etapa">Reparo</div>
+                            <p>Substituição da fonte e limpeza interna</p>
+                            <span class="status-etapa status-andamento">EM ANDAMENTO</span>
+                        </div>
+                        <div class="acoes-etapa">
+                            <button class="botao-acao botao-primario">Atualizar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 4 -->
+                    <div class="etapa">
+                        <div class="icone-etapa">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="conteudo-etapa">
+                            <div class="titulo-etapa">Testes Finais</div>
+                            <p>Verificar funcionamento e estabilidade do sistema</p>
+                            <span class="status-etapa status-pendente">PENDENTE</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 5 -->
+                    <div class="etapa">
+                        <div class="icone-etapa">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="conteudo-etapa">
+                            <div class="titulo-etapa">Encerramento</div>
+                            <p>Emitir nota fiscal e receber pagamento</p>
+                            <span class="status-etapa status-pendente">PENDENTE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="acoes-pedido">
+                    <button class="botao-acao botao-alerta">Reportar Problema</button>
+                    <button class="botao-acao botao-primario">Atualizar Progresso</button>
                 </div>
             </div>
         </div>
+        
+        <!-- PÁGINA DE PERFIL -->
+        <div class="pagina-perfil" style="display: none;">
+            <h2 class="titulo-secao"><i class="fas fa-user-circle"></i> Meu Perfil</h2>
+            
+            <div class="mensagem-aviso">
+                <i class="fas fa-info-circle"></i>
+                <span>Alterações no perfil estão sujeitas à aprovação do administrador</span>
+            </div>
+            
+            <div class="secao-pedido">
+                <form class="formulario-perfil" id="formularioPerfilTecnico">
+                    <div class="grupo-formulario-perfil">
+                        <label for="nome-tecnico">Nome Completo</label>
+                        <input type="text" id="nome-tecnico" value="João da Silva" required>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="especialidade-tecnico">Especialidade</label>
+                        <select id="especialidade-tecnico" required>
+                            <option value="ti">Técnico de TI</option>
+                            <option value="eletrica">Eletricista</option>
+                            <option value="hidraulica">Hidráulica</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="email-tecnico">E-mail</label>
+                        <input type="email" id="email-tecnico" value="joao@tecnico.com" required>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="telefone-tecnico">Telefone</label>
+                        <input type="tel" id="telefone-tecnico" value="(11) 98765-4321" required>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="login-tecnico">Nome de Login</label>
+                        <input type="text" id="login-tecnico" value="joao_tecnico" required>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="senha-tecnico">Alterar Senha</label>
+                        <input type="password" id="senha-tecnico" placeholder="Deixe em branco para manter a atual">
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="confirmar-senha-tecnico">Confirmar Senha</label>
+                        <input type="password" id="confirmar-senha-tecnico" placeholder="Confirme a nova senha">
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="sobre-tecnico">Sobre Mim</label>
+                        <textarea id="sobre-tecnico" placeholder="Descreva suas qualificações e experiência">Técnico em informática com 5 anos de experiência, especializado em manutenção de hardware e redes.</textarea>
+                    </div>
+                    
+                    <button type="submit" class="botao-acao botao-primario">Solicitar Atualização</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- PÁGINA DE CHAT -->
+        <div class="pagina-chat" style="display: none;">
+            <h2 class="titulo-secao"><i class="fas fa-comments"></i> Chat com Cliente</h2>
+            
+            <div class="secao-chat">
+                <div class="cabecalho-chat">
+                    <i class="fas fa-user-circle"></i>
+                    <h3>Conversa com Cliente Exemplo</h3>
+                </div>
+                
+                <div class="mensagens-chat">
+                    <div class="mensagem mensagem-recebida">
+                        <div class="info-mensagem">
+                            <span>Cliente Exemplo</span>
+                            <span>10:30 AM</span>
+                        </div>
+                        <p>Bom dia! Meu computador não está ligando, só faz um barulho estranho quando aperto o botão</p>
+                    </div>
+                    
+                    <div class="mensagem mensagem-enviada">
+                        <div class="info-mensagem">
+                            <span>Você</span>
+                            <span>10:35 AM</span>
+                        </div>
+                        <p>Bom dia! Pode me enviar uma foto ou vídeo do barulho? Pode ser problema na fonte</p>
+                    </div>
+                    
+                    <div class="mensagem mensagem-recebida">
+                        <div class="info-mensagem">
+                            <span>Cliente Exemplo</span>
+                            <span>10:40 AM</span>
+                        </div>
+                        <p>Enviei no e-mail. O barulho parece vir da parte de trás do gabinete</p>
+                    </div>
+                </div>
+                
+                <div class="entrada-chat">
+                    <input type="text" placeholder="Digite sua mensagem..." id="mensagem-chat-tecnico">
+                    <button id="enviar-mensagem-tecnico"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
 
-        <div class="modal" id="modalAtualizacaoEtapa">
-            <div class="conteudo-modal">
-                <div class="cabecalho-modal">
-                    <h3><i class="fas fa-tasks"></i> Atualizar Progresso</h3>
-                    <button class="botao-fechar">&times;</button>
-                </div>
-                
-                <div class="grupo-formulario-perfil">
-                    <label for="etapa-servico">Etapa do Serviço</label>
-                    <select id="etapa-servico">
-                        <option value="diagnostico">Diagnóstico Inicial</option>
-                        <option value="pecas">Compra de Peças</option>
-                        <option value="reparo" selected>Reparo</option>
-                        <option value="testes">Testes Finais</option>
-                        <option value="encerramento">Encerramento</option>
-                    </select>
-                </div>
-                
-                <div class="grupo-formulario-perfil">
-                    <label for="status-etapa">Status</label>
-                    <select id="status-etapa">
-                        <option value="pendente">Pendente</option>
-                        <option value="andamento" selected>Em Andamento</option>
-                        <option value="concluido">Concluído</option>
-                    </select>
-                </div>
-                
-                <div class="grupo-formulario-perfil">
-                    <label for="descricao-etapa">Descrição</label>
-                    <textarea id="descricao-etapa" placeholder="Descreva o progresso atual do serviço"></textarea>
-                </div>
-                
-                <div class="grupo-formulario-perfil">
-                    <label for="anexos-etapa">Anexos</label>
-                    <input type="file" id="anexos-etapa" multiple>
-                    <small>Você pode enviar fotos ou documentos relacionados</small>
-                </div>
-                
-                <div class="rodape-modal">
-                    <button class="botao botao-cancelar">Cancelar</button>
-                    <button class="botao botao-confirmar">Atualizar</button>
-                </div>
+    <div class="modal" id="modalOrcamentoTecnico">
+        <div class="conteudo-modal">
+            <div class="cabecalho-modal">
+                <h3><i class="fas fa-file-invoice-dollar"></i> Criar Orçamento</h3>
+                <button class="botao-fechar">&times;</button>
+            </div>
+            
+            <div class="grupo-formulario-perfil">
+                <label for="pecas-necessarias">Peças Necessárias</label>
+                <textarea id="pecas-necessarias" placeholder="Liste todas as peças necessárias para o serviço"></textarea>
+            </div>
+            
+            <div class="grupo-formulario-perfil">
+                <label for="descricao-servico">O que será feito</label>
+                <textarea id="descricao-servico" placeholder="Descreva detalhadamente o serviço que será realizado"></textarea>
+            </div>
+            
+            <div class="grupo-formulario-perfil">
+                <label for="valor-servico">Valor do Serviço (R$)</label>
+                <input type="number" id="valor-servico" placeholder="0,00" step="0.01">
+            </div>
+            
+            <div class="grupo-formulario-perfil">
+                <label for="tempo-servico">Tempo Estimado</label>
+                <input type="text" id="tempo-servico" placeholder="Ex: 2 horas ou 1 dia">
+            </div>
+            
+            <div class="grupo-formulario-perfil">
+                <label for="notas-servico">Notas Adicionais</label>
+                <textarea id="notas-servico" placeholder="Informações adicionais para o cliente"></textarea>
+            </div>
+            
+            <div class="rodape-modal">
+                <button class="botao botao-cancelar">Cancelar</button>
+                <button class="botao botao-confirmar">Enviar Orçamento</button>
             </div>
         </div>
-        <script src="./Assets/JS/index.js"></script>
+    </div>
+
+    <div class="modal" id="modalPedidoPecas">
+        <div class="conteudo-modal">
+            <div class="cabecalho-modal">
+                <h3><i class="fas fa-box-open"></i> Solicitar Peças</h3>
+                <button class="botao-fechar">&times;</button>
+            </div>
+            
+            <div class="lista-pecas">
+                <div class="item-peca">
+                    <input type="text" placeholder="Nome da peça" value="Fonte ATX 500W">
+                    <input type="number" placeholder="Qtd." value="1">
+                    <input type="text" placeholder="Preço unitário" value="R$ 150,00">
+                </div>
+                <div class="item-peca">
+                    <input type="text" placeholder="Nome da peça" value="HDMI 2.0 2m">
+                    <input type="number" placeholder="Qtd." value="1">
+                    <input type="text" placeholder="Preço unitário" value="R$ 25,00">
+                </div>
+            </div>
+            
+            <button class="botao-adicionar">
+                <i class="fas fa-plus"></i> Adicionar Peça
+            </button>
+            
+            <div class="grupo-formulario-perfil" style="margin-top: 20px;">
+                <label for="observacoes-pecas">Observações</label>
+                <textarea id="observacoes-pecas" placeholder="Informações adicionais sobre as peças solicitadas"></textarea>
+            </div>
+            
+            <div class="rodape-modal">
+                <button class="botao botao-cancelar">Cancelar</button>
+                <button class="botao botao-confirmar">Enviar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modalAtualizacaoEtapa">
+        <div class="conteudo-modal">
+            <div class="cabecalho-modal">
+                <h3><i class="fas fa-tasks"></i> Atualizar Progresso</h3>
+                <button class="botao-fechar">&times;</button>
+            </div>
+            
+            <div class="grupo-formulario-perfil">
+                <label for="etapa-servico">Etapa do Serviço</label>
+                <select id="etapa-servico">
+                    <option value="diagnostico">Diagnóstico Inicial</option>
+                    <option value="pecas">Compra de Peças</option>
+                    <option value="reparo" selected>Reparo</option>
+                    <option value="testes">Testes Finais</option>
+                    <option value="encerramento">Encerramento</option>
+                </select>
+            </div>
+            
+            <div class="grupo-formulario-perfil">
+                <label for="status-etapa">Status</label>
+                <select id="status-etapa">
+                    <option value="pendente">Pendente</option>
+                    <option value="andamento" selected>Em Andamento</option>
+                    <option value="concluido">Concluído</option>
+                </select>
+            </div>
+            
+            <div class="grupo-formulario-perfil">
+                <label for="descricao-etapa">Descrição</label>
+                <textarea id="descricao-etapa" placeholder="Descreva o progresso atual do serviço"></textarea>
+            </div>
+            
+            <div class="grupo-formulario-perfil">
+                <label for="anexos-etapa">Anexos</label>
+                <input type="file" id="anexos-etapa" multiple>
+                <small>Você pode enviar fotos ou documentos relacionados</small>
+            </div>
+            
+            <div class="rodape-modal">
+                <button class="botao botao-cancelar">Cancelar</button>
+                <button class="botao botao-confirmar">Atualizar</button>
+            </div>
+        </div>
+    </div>
+    <script src="./Assets/JS/index.js"></script>
 </body>
