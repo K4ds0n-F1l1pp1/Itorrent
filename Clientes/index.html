@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Cliente - ItorrentWeb</title>
+    <link rel="stylesheet" href="./Assets/CSS/Styles.css">
+    <link rel="icon" href="./Assets/Images/Itorrent.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Leaflet (OpenStreetMap) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+<body>
+    <nav class="barra-lateral">
+        <div class="cabecalho-barra">
+            <h2><i class="fas fa-user"></i> Área do Cliente</h2>
+        </div>
+        
+        <div class="menu-navegacao">
+            <div class="item-menu ativo">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-tools"></i>
+                <span>Novo Pedido</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-list-check"></i>
+                <span>Acompanhar Serviços</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Mapa de Técnicos</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-comments"></i>
+                <span>Chat</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-user-circle"></i>
+                <span>Meu Perfil</span>
+            </div>
+            <div class="item-menu">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>Orçamentos</span>
+            </div>
+        </div>
+        
+        <div class="rodape-barra">
+            <div class="info-usuario">
+                <div class="avatar-usuario">CL</div>
+                <div>
+                    <div>Cliente Exemplo</div>
+                    <small>Cliente</small>
+                </div>
+            </div>
+            <button class="botao-sair">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Sair</span>
+            </button>
+        </div>
+    </nav>
+    
+    <main class="conteudo-principal">
+        <div class="pagina-inicio">
+            <div class="cabecalho-pagina">
+                <h1 class="titulo-pagina">Bem-vindo, Cliente!</h1>
+                <div class="barra-pesquisa">
+                    <input type="text" placeholder="Pesquisar...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <h2 class="titulo-secao"><i class="fas fa-map-marker-alt"></i> Técnicos Próximos</h2>
+            <div class="container-mapa">
+                <div id="mapa-tecnicos"></div>
+            </div>
+
+            <h2 class="titulo-secao"><i class="fas fa-plus-circle"></i> Solicitar Novo Serviço</h2>
+            <div class="secao-pedido">
+                <form class="formulario-pedido" id="formularioPedido">
+                    <div class="grupo-formulario">
+                        <label for="tipo-servico">Tipo de Serviço</label>
+                        <select id="tipo-servico" required>
+                            <option value="">Selecione...</option>
+                            <option value="eletrica">Elétrica</option>
+                            <option value="hidraulica">Hidráulica</option>
+                            <option value="informatica">Informática</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="prazo-servico">Prazo Desejado</label>
+                        <input type="date" id="prazo-servico" required>
+                    </div>
+                    
+                    <div class="grupo-formulario grupo-formulario-grande">
+                        <label for="motivo-servico">Motivo do Serviço</label>
+                        <input type="text" id="motivo-servico" placeholder="Ex: Troca de tomadas" required>
+                    </div>
+                    
+                    <div class="grupo-formulario grupo-formulario-grande">
+                        <label for="detalhes-servico">Detalhes do Problema</label>
+                        <textarea id="detalhes-servico" placeholder="Descreva detalhadamente o problema ou serviço necessário..." required></textarea>
+                    </div>
+                    
+                    <div class="grupo-formulario grupo-formulario-grande">
+                        <label for="anexos-servico">Anexos (Opcional)</label>
+                        <input type="file" id="anexos-servico" multiple>
+                        <small>Você pode enviar fotos ou documentos relacionados</small>
+                    </div>
+                    
+                    <button type="submit" class="botao-enviar">Solicitar Orçamento</button>
+                </form>
+            </div>
+        </div>
+        <div class="pagina-acompanhamento" style="display: none;">
+            <h2 class="titulo-secao"><i class="fas fa-list-check"></i> Serviços em Andamento</h2>
+            
+            <div class="cartao-servico">
+                <div class="cabecalho-cartao">
+                    <div class="info-tecnico">
+                        <div class="avatar-tecnico">TJ</div>
+                        <div>
+                            <h3>Técnico João</h3>
+                            <p>Eletricista</p>
+                        </div>
+                    </div>
+                    <span class="status-servico status-andamento">EM ANDAMENTO</span>
+                </div>
+                
+                <div class="detalhes-servico">
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Serviço:</span>
+                        <span class="valor-detalhe">Troca de fiação elétrica</span>
+                    </div>
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Data:</span>
+                        <span class="valor-detalhe">15/06/2023</span>
+                    </div>
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Local:</span>
+                        <span class="valor-detalhe">Rua Exemplo, 123 - Centro</span>
+                    </div>
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Valor:</span>
+                        <span class="valor-detalhe">R$ 350,00</span>
+                    </div>
+                </div>
+                
+                <div class="acoes-servico">
+                    <button class="botao-acao botao-secundario">Detalhes</button>
+                    <button class="botao-acao botao-primario">Chat</button>
+                </div>
+            </div>
+            
+            <div class="cartao-servico">
+                <div class="cabecalho-cartao">
+                    <div class="info-tecnico">
+                        <div class="avatar-tecnico">MA</div>
+                        <div>
+                            <h3>Técnica Maria</h3>
+                            <p>Encanadora</p>
+                        </div>
+                    </div>
+                    <span class="status-servico status-pendente">AGUARDANDO ORÇAMENTO</span>
+                </div>
+                
+                <div class="detalhes-servico">
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Serviço:</span>
+                        <span class="valor-detalhe">Vazamento no banheiro</span>
+                    </div>
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Data:</span>
+                        <span class="valor-detalhe">10/06/2023</span>
+                    </div>
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Local:</span>
+                        <span class="valor-detalhe">Rua Exemplo, 123 - Centro</span>
+                    </div>
+                    <div class="linha-detalhe">
+                        <span class="rotulo-detalhe">Valor:</span>
+                        <span class="valor-detalhe">Aguardando orçamento</span>
+                    </div>
+                </div>
+                
+                <div class="acoes-servico">
+                    <button class="botao-acao botao-secundario">Detalhes</button>
+                    <button class="botao-acao botao-primario">Chat</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagina-perfil" style="display: none;">
+            <h2 class="titulo-secao"><i class="fas fa-user-circle"></i> Meu Perfil</h2>
+            
+            <div class="secao-pedido">
+                <form class="formulario-perfil" id="formularioPerfil">
+                    <div class="grupo-formulario-perfil">
+                        <label for="nome-cliente">Nome Completo</label>
+                        <input type="text" id="nome-cliente" value="Cliente Exemplo" required>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="endereco-cliente">Endereço</label>
+                        <input type="text" id="endereco-cliente" value="Rua Exemplo, 123" required>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="numero-cliente">Número</label>
+                        <input type="text" id="numero-cliente" value="123" required>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="email-cliente">E-mail</label>
+                        <input type="email" id="email-cliente" value="cliente@exemplo.com" required>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="login-cliente">Nome de Login</label>
+                        <input type="text" id="login-cliente" value="cliente_exemplo" required>
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="senha-cliente">Alterar Senha</label>
+                        <input type="password" id="senha-cliente" placeholder="Deixe em branco para manter a atual">
+                    </div>
+                    
+                    <div class="grupo-formulario-perfil">
+                        <label for="confirmar-senha">Confirmar Senha</label>
+                        <input type="password" id="confirmar-senha" placeholder="Confirme a nova senha">
+                    </div>
+
+                    <button type="submit" class="botao-enviar">Salvar Alterações</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="pagina-chat" style="display: none;">
+            <h2 class="titulo-secao"><i class="fas fa-comments"></i> Chat com Técnico</h2>
+            
+            <div class="secao-chat">
+                <div class="cabecalho-chat">
+                    <i class="fas fa-user-circle"></i>
+                    <h3>Conversa com Técnico João</h3>
+                </div>
+                
+                <div class="mensagens-chat">
+                    <div class="mensagem mensagem-recebida">
+                        <div class="info-mensagem">
+                            <span>Técnico João</span>
+                            <span>10:30 AM</span>
+                        </div>
+                        <p>Bom dia! Estou a caminho do local do serviço, devo chegar em 15 minutos.</p>
+                    </div>
+                    
+                    <div class="mensagem mensagem-enviada">
+                        <div class="info-mensagem">
+                            <span>Você</span>
+                            <span>10:32 AM</span>
+                        </div>
+                        <p>Ótimo, estarei esperando. O portão já está aberto.</p>
+                    </div>
+                    
+                    <div class="mensagem mensagem-recebida">
+                        <div class="info-mensagem">
+                            <span>Técnico João</span>
+                            <span>10:45 AM</span>
+                        </div>
+                        <p>Cheguei no local. Pode me informar onde exatamente está o problema?</p>
+                    </div>
+                </div>
+                
+                <div class="entrada-chat">
+                    <input type="text" placeholder="Digite sua mensagem..." id="mensagem-chat">
+                    <button id="enviar-mensagem"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- MODAL DE ORÇAMENTO -->
+    <div class="modal" id="modalOrcamento">
+        <div class="conteudo-modal">
+            <div class="cabecalho-modal">
+                <h3><i class="fas fa-file-invoice-dollar"></i> Proposta de Orçamento</h3>
+                <button class="botao-fechar">&times;</button>
+            </div>
+            
+            <div class="detalhes-servico">
+                <div class="linha-detalhe">
+                    <span class="rotulo-detalhe">Técnico:</span>
+                    <span class="valor-detalhe">João Silva (Eletricista)</span>
+                </div>
+                <div class="linha-detalhe">
+                    <span class="rotulo-detalhe">Avaliação:</span>
+                    <span class="valor-detalhe">★★★★☆ (4.5)</span>
+                </div>
+                <div class="linha-detalhe">
+                    <span class="rotulo-detalhe">Tempo na plataforma:</span>
+                    <span class="valor-detalhe">2 anos</span>
+                </div>
+                <div class="linha-detalhe">
+                    <span class="rotulo-detalhe">Serviços realizados:</span>
+                    <span class="valor-detalhe">47</span>
+                </div>
+                <div class="linha-detalhe">
+                    <span class="rotulo-detalhe">Peças necessárias:</span>
+                    <span class="valor-detalhe">- 3 tomadas 20A<br>- 10m de fio 2.5mm<br>- Caixa de junção</span>
+                </div>
+                <div class="linha-detalhe">
+                    <span class="rotulo-detalhe">O que será feito:</span>
+                    <span class="valor-detalhe">Substituição completa da fiação da sala, instalação de novas tomadas e verificação do quadro de distribuição.</span>
+                </div>
+                <div class="linha-detalhe">
+                    <span class="rotulo-detalhe">Preço total:</span>
+                    <span class="valor-detalhe">R$ 350,00 (inclui peças e mão de obra)</span>
+                </div>
+            </div>
+            
+            <div class="rodape-modal">
+                <button class="botao botao-cancelar">Recusar</button>
+                <button class="botao botao-confirmar">Aceitar Orçamento</button>
+            </div>
+        </div>
+    </div>
+    <script src="./Assets/JS/index.js"></script>
+</body>
+</html>

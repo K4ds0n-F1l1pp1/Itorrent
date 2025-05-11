@@ -1,0 +1,522 @@
+:root {
+    --cor-primaria: #04364A;
+    --cor-secundaria: #4AC8FF;
+    --cor-destaque: #038C3E;
+    --fundo-escuro: #0B3140;
+    --fundo-claro: #F5F6F8;
+    --texto-claro: #FFFFFF;
+    --texto-escuro: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--fundo-claro);
+}
+
+/* BARRA LATERAL */
+.barra-lateral {
+    width: 250px;
+    background-color: var(--cor-primaria);
+    color: var(--texto-claro);
+    padding: 20px 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho-barra {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.cabecalho-barra h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.cabecalho-barra h2 i {
+    color: var(--cor-secundaria);
+}
+
+.menu-navegacao {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.item-menu {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 3px solid transparent;
+}
+
+.item-menu:hover, .item-menu.ativo {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--cor-secundaria);
+}
+
+.item-menu i {
+    width: 20px;
+    text-align: center;
+}
+
+.rodape-barra {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.avatar-usuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.botao-sair {
+    background-color: transparent;
+    border: none;
+    color: var(--texto-claro);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.botao-sair:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo-principal {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cabecalho-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.titulo-pagina {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+}
+
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    padding: 8px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.barra-pesquisa input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.barra-pesquisa i {
+    color: var(--cor-primaria);
+}
+
+/* SEÇÃO DE MAPA */
+.container-mapa {
+    height: 350px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#mapa-tecnicos {
+    height: 100%;
+    width: 100%;
+}
+
+/* SEÇÃO DE NOVO PEDIDO */
+.secao-pedido {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-secao {
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.formulario-pedido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grupo-formulario {
+    margin-bottom: 15px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--cor-primaria);
+    font-weight: 500;
+}
+
+.grupo-formulario input,
+.grupo-formulario select,
+.grupo-formulario textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.grupo-formulario textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.grupo-formulario-grande {
+    grid-column: span 2;
+}
+
+.botao-enviar {
+    background-color: var(--cor-destaque);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    grid-column: span 2;
+    justify-self: end;
+}
+
+.botao-enviar:hover {
+    background-color: #027a34;
+}
+
+/* SEÇÃO DE ACOMPANHAMENTO */
+.cartao-servico {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.cabecalho-cartao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-tecnico {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-tecnico {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--fundo-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--cor-primaria);
+}
+
+.status-servico {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status-pendente {
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.status-andamento {
+    background-color: #CCE5FF;
+    color: #004085;
+}
+
+.status-concluido {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.detalhes-servico {
+    margin-bottom: 15px;
+}
+
+.linha-detalhe {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.rotulo-detalhe {
+    font-weight: bold;
+    width: 150px;
+    color: var(--cor-primaria);
+}
+
+.valor-detalhe {
+    flex-grow: 1;
+}
+
+.acoes-servico {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.botao-acao {
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border: none;
+}
+
+.botao-primario {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.botao-secundario {
+    background-color: #eee;
+    color: #333;
+}
+
+/* SEÇÃO DE PERFIL */
+.formulario-perfil {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grupo-formulario-perfil {
+    margin-bottom: 20px;
+}
+
+/* SEÇÃO DE CHAT */
+.secao-chat {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+.cabecalho-chat {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mensagens-chat {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mensagem {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.mensagem-recebida {
+    align-self: flex-start;
+    background-color: var(--fundo-claro);
+}
+
+.mensagem-enviada {
+    align-self: flex-end;
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.info-mensagem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.entrada-chat {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.entrada-chat input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+}
+
+.entrada-chat button {
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* MODAL DE ORÇAMENTO */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo-modal {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.cabecalho-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.botao-fechar {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.rodape-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.botao {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.botao-confirmar {
+    background-color: var(--cor-destaque);
+    color: white;
+}
+
+.botao-cancelar {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .barra-lateral {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .formulario-pedido {
+        grid-template-columns: 1fr;
+    }
+    
+    .grupo-formulario-grande {
+        grid-column: span 1;
+    }
+    
+    .botao-enviar {
+        grid-column: span 1;
+        width: 100%;
+    }
+}

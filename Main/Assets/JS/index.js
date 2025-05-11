@@ -24,11 +24,11 @@ $(document).ready(function () {
 
       // Redireciona com base no tipo
       if (tipo === "cliente") {
-        window.location.href = "./clientes/index.html";
+        window.location.href = "./Clientes/index.html";
       } else if (tipo === "admin") {
-        window.location.href = "./admin/index.html";
+        window.location.href = "./Admin/index.html";
       } else if (tipo === "tecnico") {
-        window.location.href = "./tecnicos/index.html";
+        window.location.href = "./Tecnicos/index.html";
       }
     } else {
       alert("Email ou senha inválidos!");
