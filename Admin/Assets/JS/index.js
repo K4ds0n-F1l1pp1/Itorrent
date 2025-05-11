@@ -5,10 +5,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const technicians = [
-    { name: "João Silva", lat: -27.095, lng: -52.618, specialty: "Eletricista" },
-    { name: "Maria Andrade", lat: -27.098, lng: -52.620, specialty: "Encanadora" },
+    { name: "João Silva", lat: -27.095, lng: -52.618, specialty: "Desenvolvedor BackEnd" },
+    { name: "Maria Andrade", lat: -27.098, lng: -52.620, specialty: "Técnica de Ti" },
     { name: "Carlos Souza", lat: -27.097, lng: -52.615, specialty: "Técnico de TI" },
-    { name: "Ana Santos", lat: -27.094, lng: -52.616, specialty: "Montadora" }
+    { name: "Ana Santos", lat: -27.094, lng: -52.616, specialty: "Analista" },
+    { name: "Juliana Costa", lat: -27.094, lng: -52.607, specialty: "Desenvolvedora FrontEnd" },
+    { name: "João John", lat: -27.099, lng: -52.608, specialty: "Técnico em robótica" }
 ];
 
 technicians.forEach(tech => {

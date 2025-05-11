@@ -283,7 +283,7 @@ technicians.forEach(tech => {
                 <i class="fas fa-edit"></i> Editar
             </button>
             <button class="action-btn fine-btn" onclick="openFineModal(${tech.id})">
-                <i class="fas fa-money-bill-wave"></i> Multas
+                <i class="fa-solid fa-circle-exclamation"></i> Multas
             </button>
             ${pendingRequests > 0 ? `
             <button class="action-btn approve-btn" onclick="openApprovalModal(${tech.id})">
