@@ -29,14 +29,6 @@
                 <span>Início</span>
             </div>
             <div class="item-menu">
-                <i class="fas fa-clipboard-list"></i>
-                <span>Pedidos Disponíveis</span>
-            </div>
-            <div class="item-menu">
-                <i class="fas fa-tools"></i>
-                <span>Meus Serviços</span>
-            </div>
-            <div class="item-menu">
                 <i class="fas fa-file-invoice-dollar"></i>
                 <span>Orçamentos</span>
                 <div class="notificacao-alerta">2</div>
@@ -65,7 +57,7 @@
                 <div class="avatar-usuario">TJ</div>
                 <div>
                     <div>Técnico João</div>
-                    <small>Técnico de TI</small>
+                    <small>Desenvolvedor BackEnd</small>
                 </div>
             </div>
             <a href="../index.html" class="botao-sair" style="text-decoration: none; display: inline-block;">
@@ -167,6 +159,44 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Modal de Detalhes do Pedido -->
+            <div class="modal" id="modalDetalhesPedido">
+                <div class="conteudo-modal">
+                    <div class="cabecalho-modal">
+                        <h3><i class="fas fa-info-circle"></i> Detalhes do Pedido</h3>
+                        <button class="botao-fechar">&times;</button>
+                    </div>
+                    
+                    <div class="detalhes-pedido-modal">
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Cliente:</span>
+                            <span class="valor-detalhe" id="detalhe-cliente"></span>
+                        </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Serviço:</span>
+                            <span class="valor-detalhe" id="detalhe-servico"></span>
+                        </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Descrição:</span>
+                            <span class="valor-detalhe" id="detalhe-descricao"></span>
+                        </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Prazo:</span>
+                            <span class="valor-detalhe" id="detalhe-prazo"></span>
+                        </div>
+                        <div class="linha-detalhe">
+                            <span class="rotulo-detalhe">Distância:</span>
+                            <span class="valor-detalhe" id="detalhe-distancia"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="rodape-modal">
+                        <button class="botao botao-alerta" id="negar-pedido">Negar</button>
+                        <button class="botao botao-confirmar" id="aceitar-pedido">Aceitar</button>
+                    </div>
+                </div>
+            </div>
             
             <!-- MEUS SERVIÇOS -->
             <h2 class="titulo-secao"><i class="fas fa-tools"></i> Meus Serviços</h2>
@@ -240,6 +270,26 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal de Listagem de Orçamentos -->
+        <div class="modal" id="modalListaOrcamentos" style="display: none;">
+            <div class="conteudo-modal">
+                <div class="cabecalho-modal">
+                    <h3><i class="fas fa-file-invoice-dollar"></i> Meus Orçamentos</h3>
+                    <button class="botao-fechar">&times;</button>
+                </div>
+                
+                <div class="lista-orcamentos" id="lista-orcamentos">
+                    
+                </div>
+                
+                <div class="rodape-modal">
+                    <button class="botao botao-primario" id="novo-orcamento">
+                        <i class="fas fa-plus"></i> Novo Orçamento
+                    </button>
+                </div>
+            </div>
+        </div>
         
         <!-- PÁGINA DE ACOMPANHAMENTO -->
         <div class="pagina-acompanhamento" style="display: none;">
@@ -303,7 +353,7 @@
                             <span class="status-etapa status-pendente">PENDENTE</span>
                         </div>
                         <div class="acoes-etapa">
-                            <button class="botao-acao botao-secundario">Detalhes</button>
+                            <button class="botao-acao botao-secundario btn-detalhes-pecas">Detalhes</button>
                         </div>
                     </div>
                     
@@ -318,7 +368,7 @@
                             <span class="status-etapa status-andamento">EM ANDAMENTO</span>
                         </div>
                         <div class="acoes-etapa">
-                            <button class="botao-acao botao-primario">Atualizar</button>
+                            <button class="botao-acao botao-primario btn-atualizar-etapa">Atualizar</button>
                         </div>
                     </div>
                     
@@ -348,8 +398,49 @@
                 </div>
                 
                 <div class="acoes-pedido">
-                    <button class="botao-acao botao-alerta">Reportar Problema</button>
-                    <button class="botao-acao botao-primario">Atualizar Progresso</button>
+                    <button class="botao-acao botao-alerta btn-reportar-problema">Reportar Problema</button>
+                    <button class="botao-acao botao-primario btn-atualizar-progresso">Atualizar Progresso</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Reportar Problema -->
+        <div class="modal" id="modalReportarProblema">
+            <div class="conteudo-modal">
+                <div class="cabecalho-modal">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Reportar Problema</h3>
+                    <button class="botao-fechar">&times;</button>
+                </div>
+                
+                <div class="grupo-formulario-perfil">
+                    <label for="tipo-problema">Tipo de Problema</label>
+                    <select id="tipo-problema">
+                        <option value="tecnico">Problema Técnico</option>
+                        <option value="cliente">Problema com Cliente</option>
+                        <option value="pecas">Falta de Peças</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                
+                <div class="grupo-formulario-perfil">
+                    <label for="descricao-problema">Descrição do Problema</label>
+                    <textarea id="descricao-problema" placeholder="Descreva detalhadamente o problema encontrado"></textarea>
+                </div>
+                
+                <div class="grupo-formulario-perfil">
+                    <label for="solucao-sugerida">Solução Sugerida</label>
+                    <textarea id="solucao-sugerida" placeholder="Descreva a solução que você sugere"></textarea>
+                </div>
+                
+                <div class="grupo-formulario-perfil">
+                    <label for="anexos-problema">Anexos</label>
+                    <input type="file" id="anexos-problema" multiple>
+                    <small>Você pode enviar fotos ou documentos relacionados ao problema</small>
+                </div>
+                
+                <div class="rodape-modal">
+                    <button class="botao botao-cancelar">Cancelar</button>
+                    <button class="botao botao-confirmar" id="enviar-problema">Enviar Relatório</button>
                 </div>
             </div>
         </div>
