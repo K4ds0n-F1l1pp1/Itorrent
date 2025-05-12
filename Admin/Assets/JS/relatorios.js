@@ -99,6 +99,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function setupEventListeners() {
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.details-btn')) {
+                const button = e.target.closest('.details-btn');
+                if (button.dataset.part) {
+                    showPartsDetails(JSON.parse(button.dataset.part));
+                }
+            }
+        });
+        
+        function showPartsDetails(part) {
+            const modal = document.getElementById('partsModal');
+            const partName = document.getElementById('partName');
+            const detailsContainer = document.getElementById('partsUsageDetails');
+            
+            partName.textContent = part.peca;
+            detailsContainer.innerHTML = '';
+            
+            part.detalhes.forEach(detail => {
+                const detailElement = document.createElement('div');
+                detailElement.className = 'usage-item';
+                detailElement.innerHTML = `
+                    <h5>Patrimônio: ${detail.patrimonio}</h5>
+                    <div class="usage-field">
+                        <strong>Técnico:</strong>
+                        <span>${detail.tecnico}</span>
+                    </div>
+                    <div class="usage-field">
+                        <strong>Data:</strong>
+                        <span>${detail.data}</span>
+                    </div>
+                    <div class="usage-field">
+                        <strong>Equipamento:</strong>
+                        <span>${detail.equipamento}</span>
+                    </div>
+                `;
+                detailsContainer.appendChild(detailElement);
+            });
+            
+            modal.style.display = 'flex';
+        }
         // Mostrar/ocultar datas personalizadas
         dateRange.addEventListener('change', function() {
             customDates.style.display = this.value === 'custom' ? 'flex' : 'none';
@@ -132,11 +172,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showReport(reportId) {
+        console.log('Mostrando relatório:', reportId); // Para depuração
+        
         reportSections.forEach(section => {
             section.classList.remove('active');
+            console.log('Seção:', section.id);
         });
         
-        document.getElementById(`${reportId}Report`).classList.add('active');
+        const activeSection = document.getElementById(`${reportId}Report`);
+        if (activeSection) {
+            activeSection.classList.add('active');
+            console.log('Seção ativada:', activeSection.id); // Confirmação
+        } else {
+            console.error('Seção não encontrada para:', reportId);
+        }
     }
 
     function populateEvaluationsTable() {
@@ -204,11 +253,61 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td>R$ ${totalValue.toFixed(2)}</td>
                 <td>${part.patrimonios}</td>
                 <td>${part.tecnicos}</td>
+                <td>
+                    <button class="action-btn details-btn" data-part='${JSON.stringify(part)}'>
+                        <i class="fas fa-info-circle"></i> Detalhes
+                    </button>
+                </td>
             `;
             
             tbody.appendChild(row);
         });
     }
+        
+        sampleParts.forEach(part => {
+            const totalValue = part.quantidade * part.valorUnitario;
+            const row = document.createElement('tr');
+            const sampleParts = [
+                {
+                    peca: "Placa Mãe ASUS",
+                    quantidade: 5,
+                    valorUnitario: 450.00,
+                    patrimonios: "PAT-001, PAT-005, PAT-010",
+                    tecnicos: "João, Maria",
+                    detalhes: [
+                        {
+                            patrimonio: "PAT-001",
+                            tecnico: "João",
+                            data: "15/05/2023",
+                            equipamento: "Computador Dell Optiplex 3050"
+                        },
+                        {
+                            patrimonio: "PAT-005",
+                            tecnico: "Maria",
+                            data: "18/05/2023",
+                            equipamento: "Notebook Lenovo ThinkPad"
+                        },
+                        {
+                            patrimonio: "PAT-010",
+                            tecnico: "João",
+                            data: "22/05/2023",
+                            equipamento: "Servidor HP ProLiant"
+                        }
+                    ]
+                },
+            ];
+            
+            row.innerHTML = `
+                <td>${part.peca}</td>
+                <td>${part.quantidade}</td>
+                <td>R$ ${part.valorUnitario.toFixed(2)}</td>
+                <td>R$ ${totalValue.toFixed(2)}</td>
+                <td>${part.patrimonios}</td>
+                <td>${part.tecnicos}</td>
+            `;
+            
+            tbody.appendChild(row);
+        });
 
     function renderStars(rating) {
         const fullStars = Math.floor(rating);
@@ -230,4 +329,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         return stars;
     }
+
+    
 });

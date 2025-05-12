@@ -150,8 +150,6 @@
                     </div>
                 </div>
 
-                <!-- Relatório Semanal de Peças -->
-                <div class="report-section" id="weeklyReport">
                     <h2><i class="fas fa-microchip"></i> Relatório Semanal de Peças</h2>
                     <div class="report-actions">
                         <button class="export-btn">
@@ -168,16 +166,36 @@
                                     <th>Valor Total</th>
                                     <th>Patrimônios</th>
                                     <th>Técnicos</th>
+                                    <th>Detalhes</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Dados serão inseridos via JavaScript -->
+                                
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- Modal de Detalhes de Peças -->
+    <div id="partsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Detalhes de Uso da Peça</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4 id="partName"></h4>
+                <div class="parts-usage-container" id="partsUsageDetails">
+                    <!-- Detalhes serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal">Fechar</button>
+            </div>
+        </div>
     </div>
 
     <!-- Modal de Detalhes de Avaliação -->
