@@ -97,7 +97,7 @@
                     
                     <div class="grupo-formulario grupo-formulario-grande">
                         <label for="motivo-servico">Motivo do Serviço</label>
-                        <input type="text" id="motivo-servico" placeholder="Ex: Fonte queimada" required>
+                        <input type="text" id="motivo-servico" placeholder="Ex: Troca de tomadas" required>
                     </div>
                     
                     <div class="grupo-formulario grupo-formulario-grande">
@@ -113,27 +113,6 @@
                     
                     <button type="submit" class="botao-enviar">Solicitar Orçamento</button>
                 </form>
-
-                <div class="pagina-acompanhamento" style="display: none;">
-                    <h2 class="titulo-secao"><i class="fas fa-list-check"></i> Meus Pedidos</h2>
-                    
-                    <div class="tabela-pedidos">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Serviço</th>
-                                    <th>Data</th>
-                                    <th>Local</th>
-                                    <th>Status</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody id="lista-pedidos-cliente">
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="pagina-acompanhamento" style="display: none;">
@@ -145,10 +124,10 @@
                         <div class="avatar-tecnico">TJ</div>
                         <div>
                             <h3>Técnico João</h3>
-                            <p>Desenvolvedor BackEnd</p>
+                            <p>Eletricista</p>
                         </div>
                     </div>
-                    <span class="status-servico status-andamento">EM ANDAMENTO</span>
+                    <span class="status-servico status-andamento">DESAPROVADO</span>
                 </div>
                 
                 <div class="detalhes-servico">
@@ -217,9 +196,7 @@
                 </div>
                 
                 <div class="rodape-modal">
-                    <a href="./indexDesaprovadoOrçamento.html">
-                        <button class="botao botao-recusar" id="aprovar-servico">Recusar Serviço</button>
-                    </a>
+                    <button class="botao botao-cancelar" id="recusar-servico">Recusar Serviço</button>
                     <a href="./indexAprovadoOrçamento.html">
                         <button class="botao botao-confirmar" id="aprovar-servico">Aprovar Serviço</button>
                     </a>
@@ -341,69 +318,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal de Edição -->
-<div class="modal" id="modalEditar">
-    <div class="conteudo-modal">
-        <div class="cabecalho-modal">
-            <h3><i class="fas fa-edit"></i> <span id="titulo-modal">Editar Serviço</span></h3>
-            <button class="botao-fechar fechar-modal">&times;</button>
-        </div>
-        
-        <div class="corpo-modal">
-            <input type="hidden" id="edit-id">
-            
-            <div class="grupo-formulario">
-                <label for="edit-tecnico">Técnico</label>
-                <input type="text" id="edit-tecnico" value="Técnico João" readonly>
-            </div>
-            
-            <div class="grupo-formulario">
-                <label for="edit-servico">Serviço</label>
-                <input type="text" id="edit-servico" required>
-            </div>
-            
-            <div class="grupo-formulario">
-                <label for="edit-data">Data</label>
-                <input type="text" id="edit-data" required>
-            </div>
-            
-            <div class="grupo-formulario">
-                <label for="edit-local">Local</label>
-                <input type="text" id="edit-local" required>
-            </div>
-            
-            <div class="grupo-formulario">
-                <label for="edit-descricao">Descrição</label>
-                <textarea id="edit-descricao" required></textarea>
-            </div>
-            
-            <div class="grupo-formulario">
-                <label for="edit-pecas">Peças/Materiais</label>
-                <textarea id="edit-pecas"></textarea>
-            </div>
-            
-            <div class="grupo-formulario">
-                <label for="edit-valor">Valor</label>
-                <input type="text" id="edit-valor" required>
-            </div>
-            
-            <div class="grupo-formulario">
-                <label for="edit-status">Status</label>
-                <select id="edit-status">
-                    <option value="pendente">Pendente</option>
-                    <option value="andamento">Em Andamento</option>
-                    <option value="concluido">Concluído</option>
-                </select>
-            </div>
-        </div>
-        
-        <div class="rodape-modal">
-            <button class="botao botao-cancelar fechar-modal">Cancelar</button>
-            <button class="botao botao-confirmar" id="salvar-servico">Salvar</button>
-        </div>
-    </div>
-</div>
     </main>
     
     <!-- MODAL DE ORÇAMENTO -->

@@ -165,7 +165,9 @@ body {
     background-color: #ddd;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: .3rem solid var(--texto-escuro);
+    box-shadow: 1rem 1rem 1rem 0 var(--azulForte);
+    margin-bottom: 20px;
 }
 
 #mapa-tecnicos {
@@ -519,4 +521,223 @@ body {
         grid-column: span 1;
         width: 100%;
     }
+}
+
+/* Estilos para os novos modais */
+.detalhes-servico-modal {
+    padding: 15px 0;
+}
+
+.chat-container-modal {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+}
+
+.chat-container-modal .chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-container-modal .chat-input {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+}
+
+.chat-container-modal .chat-input input {
+    flex-grow: 1;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+.chat-container-modal .chat-input button {
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Mensagens do chat */
+.mensagem {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.mensagem-recebida {
+    align-self: flex-start;
+    background-color: var(--fundo-claro);
+    border-bottom-left-radius: 5px;
+}
+
+.mensagem-enviada {
+    align-self: flex-end;
+    background-color: var(--cor-secundaria);
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.info-mensagem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+/* Responsividade para os modais */
+@media (max-width: 768px) {
+    .conteudo-modal {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .detalhes-servico-modal .linha-detalhe {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .detalhes-servico-modal .rotulo-detalhe {
+        width: auto;
+        margin-bottom: 5px;
+    }
+    
+    .rodape-modal {
+        flex-direction: column;
+    }
+    
+    .rodape-modal .botao {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Estilos para o CRUD */
+.lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.botao-editar {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.botao-excluir {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Modal de edição */
+.corpo-modal {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.grupo-formulario {
+    margin-bottom: 15px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.grupo-formulario input,
+.grupo-formulario select,
+.grupo-formulario textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.grupo-formulario textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Status */
+.status-pendente {
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.status-andamento {
+    background-color: #CCE5FF;
+    color: #004085;
+}
+
+.status-concluido {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.tabela-pedidos {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.tabela-pedidos table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-pedidos th, 
+.tabela-pedidos td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabela-pedidos th {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.tabela-pedidos tr:hover {
+    background-color: #f5f5f5;
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 8px;
+}
+
+.botao-tabela {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.botao-editar {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.botao-excluir {
+    background-color: #dc3545;
+    color: white;
 }
